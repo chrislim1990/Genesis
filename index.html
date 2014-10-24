@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Sass</title>
+	<title>Genesis MK II</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -10,6 +10,11 @@
 		<div class="row">
 			
 			<div class="col-md-12">
+
+				<h3>Typography</h3>
+				<p>The typography of Skeleton is designed to create a strong hierarchy with basic styles. </p>
+				<br>
+
 				<h1>h1 - This is a very large header.</h1>
 				<h2>h2 - This is a large header.</h2>
 				<h3>h3 - This is a medium header.</h3>
@@ -17,35 +22,109 @@
 				<h5>h5 - This is a small header.</h5>
 				<h6>h6 - This is a tiny header.</h6>
 				<br>
-				<p class="lead">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.</p>
-				<p> Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula. </p>
-				<p> Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla. </p>
-				<p> Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit non mi porta gravida at eget metus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. </p>
 
-				<hr>
+				<div class="row">
+					<div class="col-md-6">
+						<p class="lead">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.</p>
+						<p> Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula. </p>
+						<p> Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla. </p>
+						<p> Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit non mi porta gravida at eget metus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. </p>
+					</div>
 
-				<ul class="disc">
-					<li>List item with a much longer description or more content.</li>
-					<li>List item</li>
-					<li>List item
-						<ul>
-							<li>Nested List Item</li>
-							<li>Nested List Item</li>
-							<li>Nested List Item</li>
+					<div class="col-md-6">
+
+						<h4>Unordered</h4>
+						<p>A list of items in which the order does not explicitly matter.</p>
+
+						<ul class="disc">
+							<li>List item with a much longer description or more content.</li>
+							<li>List item</li>
+							<li>List item
+								<ul>
+									<li>Nested List Item</li>
+									<li>Nested List Item</li>
+									<li>Nested List Item</li>
+								</ul>
+							</li>
+							<li>List item</li>
+							<li>List item</li>
+							<li>List item</li>
 						</ul>
-					</li>
-					<li>List item</li>
-					<li>List item</li>
-					<li>List item</li>
-				</ul>
+
+						<br>
+
+						<h4>Ordered</h4>
+						<p>A list of items in which the order does explicitly matter.</p>
+
+						<ol>
+							<li>List Item 1</li>
+							<li>List Item 2</li>
+							<li>List Item 3</li>
+						</ol>
+					</div>
+				</div>
 
 				<hr>
 
-				<ol>
-					<li>List Item 1</li>
-					<li>List Item 2</li>
-					<li>List Item 3</li>
-				</ol>
+				<h3>Forms</h3>
+				<p>Forms can be one of the biggest pains for web developers, but just use these dead simple styles and you should be good to go.</p>
+				<br>
+
+				<form class="row">
+					<fieldset class="col-md-6">
+						<label for="regularInput">Regular Input</label>
+						<input type="text" id="regularInput">
+					</fieldset>
+					<fieldset class="col-md-6">
+						<label for="regularInput">Regular Input</label>
+						<input type="text" id="regularInput">
+					</fieldset>
+					<fieldset class="col-md-12">
+						<label for="regularTextarea">Regular Textarea</label>
+						<textarea id="regularTextarea"></textarea>
+					</fieldset>
+
+					<fieldset class="col-md-4">
+						<label for="selectList">Select List</label>
+						<select id="selectList">
+							<option value="Option 1">Option 1</option>
+							<option value="Option 2">Option 2</option>
+							<option value="Option 3">Option 3</option>
+							<option value="Option 4">Option 4</option>
+						</select>
+					</fieldset>
+
+					<fieldset class="col-md-4">
+						<legend>Checkboxes</legend>
+						<label for="regularCheckbox">
+							<input type="checkbox" id="regularCheckbox" value="checkbox 1">
+							<span>Regular Checkbox</span>
+						</label>
+						<label for="secondRegularCheckbox">
+							<input type="checkbox" id="secondRegularCheckbox" value="checkbox 2">
+							<span>Regular Checkbox</span>
+						</label>
+					</fieldset>
+					
+					<fieldset class="col-md-4">
+						<legend>Radio Buttons</legend>
+						<label for="regularRadio">
+							<input type="radio" name="radios" id="regularRadio" value="radio 1">
+							<span>Regular Radio</span>
+						</label>
+						<label for="secondRegularRadio">
+							<input type="radio" name="radios" id="secondRegularRadio" value="radio 2">
+							<span>Regular Radio</span>
+						</label>
+					</fieldset>
+					
+					<fieldset class="col-md-12">
+						<button type="submit">Submit Form</button>
+					</fieldset>
+
+				</form>
+
+				<hr>
 
 			</div>
 
