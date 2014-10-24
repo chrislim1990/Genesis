@@ -11,25 +11,12 @@ broswer default font size.
 @import "functions/converter";
 @import "mixins/clearfix";
 
+
 /*--------------------------------------------------------------
-Variables
+Convert to em
 --------------------------------------------------------------*/
 
-$screen-sizes: (
-	xs : 480px,
-	sm : 768px,
-	md : 992px,
-	lg : 1200px
-	) !default;
-
-$base-font-size: 16px;
-
-// Columns
-$grid-columns: 12 !default;
-
-// Gutter Width
-$grid-gutter-width: em(30px) !default;
-
+$grid-gutter-width : em($grid-gutter-width);
 
 /*--------------------------------------------------------------
 Mixins

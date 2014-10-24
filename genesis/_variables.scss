@@ -1,0 +1,29 @@
+$base-font-size: 16px;
+
+
+/*--------------------------------------------------------------
+Grid
+--------------------------------------------------------------*/
+
+$screen-sizes: (
+	xs : 480px,
+	sm : 768px,
+	md : 992px,
+	lg : 1200px
+	) !default;
+
+$grid-columns: 12 !default;
+
+$grid-gutter-width: 30px !default;
+
+
+/*--------------------------------------------------------------
+Typography
+--------------------------------------------------------------*/
+
+$line-height: 1.4;
+
+$headings-font-family: sans-serif;
+$headings-font-weight: normal;
+$headings-color: #000; 
+$headings-small-color: #6F6F6F;
