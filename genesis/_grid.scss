@@ -3,29 +3,26 @@
 Grid
 
 Based on Boostrap grid, but removed the push and pull. 
-And switch to em instead of px.
+And switch to em instead of px, so it is scalable when user change their
+broswer default font size.
 
 --------------------------------------------------------------*/
 
 @import "functions/converter";
+@import "mixins/clearfix";
 
 /*--------------------------------------------------------------
 Variables
 --------------------------------------------------------------*/
 
+$screen-sizes: (
+	xs : 480px,
+	sm : 768px,
+	md : 992px,
+	lg : 1200px
+	) !default;
+
 $base-font-size: 16px;
-
-// Extra small screen / phone
-$screen-xs: em(480px) !default;
-
-// Small screen / tablet
-$screen-sm: em(768px) !default;
-
-// Medium screen / desktop
-$screen-md: em(992px) !default;
-
-// Large screen / wide desktop
-$screen-lg: em(1200px) !default;
 
 // Columns
 $grid-columns: 12 !default;
@@ -37,17 +34,6 @@ $grid-gutter-width: em(30px) !default;
 /*--------------------------------------------------------------
 Mixins
 --------------------------------------------------------------*/
-
-@mixin clearfix() {
-	&:before,
-	&:after {
-		content: " ";
-		display: table;
-	}
-	&:after {
-		clear: both;
-	}
-}
 
 @mixin make-container($gutter: $grid-gutter-width) {
 	margin-right: auto;
@@ -123,14 +109,10 @@ CSS
 .container {
 	@include make-container();
 
-	@media (min-width: $screen-sm) {
-		width: $screen-sm;
-	}
-	@media (min-width: $screen-md) {
-		width: $screen-md;
-	}
-	@media (min-width: $screen-lg) {
-		width: $screen-lg;
+	@each $type, $size in $screen-sizes {
+		@media (min-width: em($size)) {
+			width: em($size);
+		}
 	}
 }
 
@@ -144,16 +126,8 @@ CSS
 
 @include make-grid-columns();
 
-@include make-grid(xs);
-
-@media (min-width: $screen-sm) {
-	@include make-grid(sm);
-}
-
-@media (min-width: $screen-md) {
-	@include make-grid(md);
-}
-
-@media (min-width: $screen-lg) {
-	@include make-grid(lg);
+@each $type, $size in $screen-sizes {
+	@media (min-width: em($size)) {
+		@include make-grid($type);
+	}
 }
