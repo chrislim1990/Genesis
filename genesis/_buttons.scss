@@ -1,0 +1,46 @@
+/*--------------------------------------------------------------
+Buttons
+
+--------------------------------------------------------------*/
+
+.btn {
+	display: inline-block;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+	background-image: none;
+	
+	border: 1px solid $border-color;
+	white-space: nowrap;
+	margin: 0;
+	padding: 0.5em 1em;
+	font-size: 0.85em;
+	color: map-get($button, color);
+	background: map-get($button, background);
+
+	&:hover,
+	&:focus {
+		color: map-get($button, hover-color);
+		text-decoration: none;
+		background: map-get($button, hover-background);
+	}
+
+	&:active,
+	&.active {
+		outline: 0;
+		background-image: none;
+	}
+
+	&.disabled,
+	&[disabled],
+	fieldset[disabled] & {
+		cursor: not-allowed;
+		pointer-events: none;
+		box-shadow: none;
+	}
+}
+
+.btn-lg{
+	padding: 1em 2em;
+	font-size: 1em;
+}

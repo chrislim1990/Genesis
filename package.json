@@ -1,13 +1,14 @@
 {
-   "name" : "Sass",
-   "version" : "0.1.0",
-   "author" : "LX2",
-   "private" : true,
+ "name" : "Sass",
+ "version" : "0.1.0",
+ "author" : "LX2",
+ "private" : true,
 
-   "devDependencies" : {
-     "grunt"                 : "~0.4.5",
-     "grunt-contrib-sass"    : "*",
-     "grunt-contrib-watch"   : "*",
-     "grunt-autoprefixer"    : "~1.0.1"
-   }
+ "devDependencies" : {
+   "grunt"                 : "~0.4.5",
+   "grunt-contrib-sass"    : "*",
+   "grunt-contrib-watch"   : "*",
+   "grunt-autoprefixer"    : "~1.0.1",
+   "grunt-express"         : "*"
  }
+}

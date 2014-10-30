@@ -1,0 +1,25 @@
+// Output media queries
+@mixin respond-to($screen-size) { 
+	@if map-has-key($screen-sizes, $screen-size) {
+		@media (min-width: #{map-get($screen-sizes, $screen-size)}) {
+			@content;
+		}
+	}
+	
+	@else {
+		@warn "Unfortunately, no value could be retrieved from `#{$screen-size}`. "
+		+ "Please make sure it is defined in `$breakpoints` map.";
+	}
+}
+
+// Clearfix
+@mixin clearfix() {
+	&:before,
+	&:after {
+		content: " ";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}

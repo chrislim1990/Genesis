@@ -1,5 +1,13 @@
 $base-font-size: 16px;
-$border-color: #eee;
+$border-color: #ddd;
+$global-radius: 3px;
+$link-color: #428BCA;
+
+/*--------------------------------------------------------------
+Colors
+--------------------------------------------------------------*/
+
+$color-primary: #fff;
 
 /*--------------------------------------------------------------
 Grid
@@ -10,11 +18,11 @@ $screen-sizes: (
 	sm : 768px,
 	md : 992px,
 	lg : 1200px
-	) !default;
+	);
 
-$grid-columns: 12 !default;
+$grid-columns: 12;
 
-$grid-gutter-width: 30px !default;
+$grid-gutter-width: 30px;
 
 
 /*--------------------------------------------------------------
@@ -28,3 +36,14 @@ $headings-font-family: sans-serif;
 $headings-font-weight: normal;
 $headings-color: #000; 
 $headings-small-color: #6F6F6F;
+
+/*--------------------------------------------------------------
+Buttons
+--------------------------------------------------------------*/
+
+$button: (
+	color: $body-color,
+	background: $color-primary,
+	hover-background: darken($color-primary,5),
+	hover-color: $body-color,
+	);

@@ -11,6 +11,7 @@
 			
 			<div class="col-md-12">
 
+				<br>
 				<h3>Typography</h3>
 				<p>The typography of Skeleton is designed to create a strong hierarchy with basic styles. </p>
 				<br>
@@ -29,6 +30,10 @@
 						<p> Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula. </p>
 						<p> Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla. </p>
 						<p> Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit non mi porta gravida at eget metus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. </p>
+						<br>
+
+						<h4>Code</h4>
+						<p>For example, to close your browser hit <code>Cmd</code> + <code>Q</code></p>
 					</div>
 
 					<div class="col-md-6">
@@ -63,6 +68,17 @@
 						</ol>
 					</div>
 				</div>
+
+				<hr>
+
+
+				<h3>Buttons</h3>
+				<p>Use any of the available button classes to quickly create a styled button.</p>
+				<br>
+
+				<button type="button" class="btn">Default</button>
+				<a href="#" class="btn">Link as button</a>
+				<button type="button" class="btn btn-lg">Large Button</button>
 
 				<hr>
 
@@ -121,7 +137,7 @@
 					<br>
 
 					<fieldset class="col-md-12">
-						<button type="submit">Submit Form</button>
+						<button type="submit" class="btn">Submit Form</button>
 					</fieldset>
 
 				</form>
@@ -132,7 +148,9 @@
 				<p>Some helpers to save time</p>
 				<br>
 
-				<h5>Inline List</h5>
+				<h4>Inline List</h4>
+				<p>Just add the <code>inline-list</code> to the ul</p>
+
 				<ul class="inline-list">
 					<li><a href="#">Link 1</a></li>
 					<li><a href="#">Link 2</a></li>
@@ -140,28 +158,75 @@
 					<li><a href="#">Link 4</a></li>
 					<li><a href="#">Link 5</a></li>
 				</ul>
+				<br>
 
-			</div>
+				<h4>Vertical Align</h4>
+				<p>Added <code>valign</code> class to the parent, then wrap the child in
+					<code>div</code> will do.</p>
+
+					<div class="row">
+						<div class="valign col-md-6 row">
+							<div class="col-md-4">
+								<span style="display:block;background:#444;height:150px;width:150px;"></span>
+							</div>
+							<div class="col-md-8">
+								<p>Vertical Align</p>
+							</div>
+						</div>
+
+						<div class="valign col-md-6 row">
+							<div class="col-md-4">
+								<span style="display:block;background:#444;height:150px;width:150px;"></span>
+							</div>
+							<div class="col-md-8">
+								<p>Vertical Align with a much longer description or more content.</p>
+							</div>
+						</div>
+
+					</div>
+					<br>
+					<br>
+
+					<h4>Flex Video</h4>
+
+					<div class="row">
+						<div class="col-md-6">
+							<p>16:9 aspect ratio</p>
+							<div class="embed-responsive embed-responsive-16by9">
+								<iframe class="embed-responsive-item" src="//www.youtube.com/embed/qOw44VFNk8Y" allowfullscreen></iframe>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<p>4:3 aspect ratio</p>
+							<div class="embed-responsive embed-responsive-4by3">
+								<iframe class="embed-responsive-item" src="//www.youtube.com/embed/qOw44VFNk8Y" allowfullscreen></iframe>
+							</div>
+						</div>
+					</div>
+
+					<hr>
+
+				</div>
 
 
-			<div class="col-md-2 col-xs-6">.col-md-2 .col-xs-6</div>
-			
-			<div class="col-md-4 col-xs-6">.col-md-4 .col-xs-6</div>
-			
-			<div class="col-md-5 col-md-offset-1 col-xs-12">
+				<div class="col-md-2 col-xs-6">.col-md-2 .col-xs-6</div>
 
-				LVL 1: .col-md-5 .col-md-offset-1 .col-xs-12
+				<div class="col-md-4 col-xs-6">.col-md-4 .col-xs-6</div>
 
-				<div class="row">
-					<div class="col-md-8 col-xs-6"> LVL 2: .col-md-8 .col-xs-6</div>
-					<div class="col-md-4 col-xs-6"> LVL 2: .col-md-4 .col-xs-6</div>
+				<div class="col-md-5 col-md-offset-1 col-xs-12">
+
+					LVL 1: .col-md-5 .col-md-offset-1 .col-xs-12
+
+					<div class="row">
+						<div class="col-md-8 col-xs-6"> LVL 2: .col-md-8 .col-xs-6</div>
+						<div class="col-md-4 col-xs-6"> LVL 2: .col-md-4 .col-xs-6</div>
+					</div>
+
 				</div>
 
 			</div>
 
 		</div>
 
-	</div>
-
-</body>
-</html>
+	</body>
+	</html>

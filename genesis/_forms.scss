@@ -1,6 +1,9 @@
 form{
 	font-size: 0.85em;
 	margin-bottom: 2em; 
+	.btn{
+		font-size: 1em;
+	}
 }
 
 fieldset{
@@ -24,10 +27,10 @@ input[type="password"],
 input[type="email"],
 textarea,
 select {
-	border: 1px solid darken($border-color,10);
+	border: 1px solid $border-color;
 	padding: 0.45em 0.35em;
 	outline: none;
-	border-radius: 0.2em;
+	border-radius: $global-radius;
 	margin: 0;
 	width: 100%;
 	display: block;
@@ -35,7 +38,7 @@ select {
 	background: #fff;
 
 	&:focus{
-		border-color: darken($border-color,20);
+		border-color: darken($border-color,10);
 		color: lighten($body-color,20);
 		box-shadow:  0 0 3px rgba(0,0,0,.2); 
 	} 

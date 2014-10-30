@@ -11,7 +11,25 @@ body{
 	color: $body-color;
 }
 
-h1, h2, h3, h4, h5, h6 {
+a {
+	color: $link-color;
+	text-decoration: none;
+	&:hover, &:focus {
+		color: darken($link-color,10);
+		text-decoration: underline;
+	}
+}
+
+$headings-size: (
+	h1 : 2.6em,
+	h2 : 2.2em,
+	h3 : 1.7em,
+	h4 : 1.3em,
+	h5 : 1.0em,
+	h6 : 0.9em,
+	) !default;
+
+%headings-style{
 	font-family: $headings-font-family;
 	font-weight: $headings-font-weight;
 	color: $headings-color;
@@ -19,12 +37,16 @@ h1, h2, h3, h4, h5, h6 {
 	margin-bottom: 0.5em;
 }
 
-h1{ font-size: 2.6em; }
-h2{ font-size: 2.2em; }
-h3{ font-size: 1.7em; }
-h4{ font-size: 1.3em; }
-h5{ font-size: 1.0em; }
-h6{ font-size: 0.9em; }
+@mixin headings($from: 1, $to: 6){
+	@for $i from $from through $to{
+		h#{$i}, .h#{$i}{
+			@extend %headings-style;
+			font-size: map-get($headings-size, h#{$i});
+		}
+	}
+}
+
+@include headings();
 
 p{
 	margin: 0 0 1em;
@@ -52,9 +74,19 @@ ul, ol, {
 }
 
 hr{
-	border: solid #DDD;
+	border: solid $border-color;
 	border-width: 1px 0 0;
 	clear: both;
 	margin: 1.2em 0;
 	height: 0;
+}
+
+code {
+	background-color: lighten($border-color,10);
+	border: 1px solid $border-color;
+	margin: 0;
+	font-family: "Consolas", "Menlo", "Courier", monospace;
+	padding: 0.15em 0.35em 0;
+	border-radius: $global-radius;
+	font-size: 0.9em
 }
