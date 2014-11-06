@@ -18,7 +18,7 @@ module.exports = function(grunt) {
 					style: 'compressed',
 					sourcemap: 'none'
 				},
-				files: {                         
+				files: {                       
 					'style.css': 'style.scss',    
 				}
 			}
@@ -32,7 +32,7 @@ module.exports = function(grunt) {
 
 		watch: {
 			sass:{
-				files: ['genesis/sass/*.scss','style.scss'],
+				files: ['genesis/sass/*.scss'],
 				tasks: ['sass','autoprefixer'],
 			},
 			options: {
@@ -43,9 +43,9 @@ module.exports = function(grunt) {
 	})
 
 	grunt.registerTask('server',[
- 		'express',
- 		'watch'
- 		])
+		'express',
+		'watch'
+		])
 
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-watch');

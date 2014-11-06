@@ -20,8 +20,8 @@ Helpers
 }
 
 // Vertical Align
-	.valign {
-		@include above(sm){
+.valign {
+	@include above(sm){
 		display: table;
 		& > div, & > article, & > section, & > figure {
 			display: table-cell;
@@ -29,4 +29,13 @@ Helpers
 			float: none;
 		}
 	}
+}
+
+// Animate
+@mixin transition($property:all, $time:200ms) {
+	transition: $property $time ease;
+}
+
+.animate{
+	@include transition;
 }

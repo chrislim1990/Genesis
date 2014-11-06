@@ -196,21 +196,30 @@
 					<code>div</code> will do.</p>
 
 					<div class="row">
-						<div class="valign col-md-6 row">
+						<div class="valign col-md-4 row">
 							<div class="col-md-4">
-								<img src="http://fakeimg.pl/200/">
+								<img src="http://fakeimg.pl/100x300/">
 							</div>
 							<div class="col-md-8">
 								<p>Vertical Align</p>
 							</div>
 						</div>
 
-						<div class="valign col-md-6 row">
+						<div class="valign col-md-4 row">
 							<div class="col-md-4">
-								<img src="http://fakeimg.pl/200/">
+								<img src="http://fakeimg.pl/100x300/">
 							</div>
 							<div class="col-md-8">
 								<p>Vertical Align with a much longer description or more content.</p>
+							</div>
+						</div>
+
+						<div class="col-md-4">
+							<div class="valign" style="height:300px;width:300px;background-image:url(http://fakeimg.pl/300x300/)">
+								<div class="col-md-12">
+									<h4>Hi there</h4>
+									<p>Vertical Align with image background</p>
+								</div>
 							</div>
 						</div>
 
@@ -234,6 +243,16 @@
 							</div>
 						</div>
 					</div>
+
+					<h4>Animate Class</h4>
+					<p>Add the class <code>animate</code> to whatever you want</p>
+					
+					<style type="text/css">
+						.animate_sample:hover{ padding: 2em; }
+					</style>
+
+					<a href="" class="btn animate animate_sample">With Animate</a>
+					<a href="" class="btn animate_sample">Without Animate</a>
 
 					<hr>
 
