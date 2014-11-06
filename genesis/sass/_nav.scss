@@ -1,0 +1,59 @@
+/*--------------------------------------------------------------
+Nav
+--------------------------------------------------------------*/
+
+.header { 
+	position: relative;
+}
+
+#toggle,
+.toggle { 
+	display: none; 
+}
+
+@include below(sm){
+
+	.menu { 
+		display: none; 
+		opacity: 0; 
+		width: 100%; 
+		position: absolute; 
+		right: 0;
+
+		& > li { 
+			display: block; 
+			width: 100%; 
+			margin: 0;
+
+			& > a { 
+				display: block; 
+				width: 100%; 
+				text-decoration: none;
+				padding: 1em;
+				background: #fff;
+			}
+		}
+	}
+
+	.toggle { 
+		display: block; 
+		position: relative; 
+		cursor: pointer; 
+		-webkit-touch-callout: none; 
+		-webkit-user-select: none; 
+		user-select: none; 
+		&:after {
+			content: attr(data-open);
+		}
+	}
+	#toggle:checked + div{ 
+		.menu { 
+			display: block; 
+			opacity: 1;
+		}
+		.toggle:after{
+			content: attr(data-close);
+		}
+	}
+	
+}

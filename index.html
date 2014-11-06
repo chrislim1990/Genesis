@@ -3,13 +3,44 @@
 <head>
 	<title>Genesis MK II</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script type="text/javascript" src="genesis/js/simpleslider/jquery.simpleslider.min.js"></script>
 </head>
 <body>
 
 	<div class="container">
 		<div class="row">
-			
 			<div class="col-md-12">
+
+				<h3>Nav</h3>
+				<div class="header">
+					<input type="checkbox" id="toggle" />
+					<div>
+						<label for="toggle" class="toggle btn" data-open="Main Menu" data-close="Close Menu" onclick></label>
+						<ul class="menu inline-list">
+							<li><a href="#">Google</a></li>
+							<li><a href="#">Facebook</a></li>     
+							<li><a href="#">Youtube</a></li>  
+							<li><a href="#">Twitter</a></li>
+						</ul>
+					</div>
+				</div>
+				<hr>
+
+				<div class='slider'>
+					<div class='slide' style="background-image:url(http://fakeimg.pl/1200x400/eeeeee/)">
+						<div class='slidecontent'>
+							<h1>h1 - Very Large Header</h1>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam posuere cursus euismod.Aenean ut tortor leoing elit. Etiam posuere cursus euismod.Aenean ut tortor leo.</p>
+						</div>
+					</div>
+					<div class='slide' style="background-image:url(http://fakeimg.pl/1200x400/)">
+						<div class='slidecontent'>
+							<h2>h2 - Large Header</h2>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam posuere cursus euismod.Aenean ut tortor leo.</p>
+						</div>
+					</div>
+				</div>
 
 				<br>
 				<h3>Typography</h3>
@@ -167,7 +198,7 @@
 					<div class="row">
 						<div class="valign col-md-6 row">
 							<div class="col-md-4">
-								<span style="display:block;background:#444;height:150px;width:150px;"></span>
+								<img src="http://fakeimg.pl/200/">
 							</div>
 							<div class="col-md-8">
 								<p>Vertical Align</p>
@@ -176,7 +207,7 @@
 
 						<div class="valign col-md-6 row">
 							<div class="col-md-4">
-								<span style="display:block;background:#444;height:150px;width:150px;"></span>
+								<img src="http://fakeimg.pl/200/">
 							</div>
 							<div class="col-md-8">
 								<p>Vertical Align with a much longer description or more content.</p>
@@ -227,6 +258,10 @@
 			</div>
 
 		</div>
-
+		<script>
+			$(document).ready(function(){
+				$(".slider").simpleSlider();
+			});
+		</script>
 	</body>
 	</html>
