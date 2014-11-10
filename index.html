@@ -3,6 +3,7 @@
 <head>
 	<title>Genesis MK II</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script type="text/javascript" src="genesis/js/simpleslider/jquery.simpleslider.min.js"></script>
 </head>
@@ -18,13 +19,25 @@
 					<div>
 						<label for="toggle" class="toggle btn" data-open="Main Menu" data-close="Close Menu" onclick></label>
 						<ul class="menu inline-list">
-							<li><a href="#">Google</a></li>
-							<li><a href="#">Facebook</a></li>     
-							<li><a href="#">Youtube</a></li>  
-							<li><a href="#">Twitter</a></li>
+							<li><a href="#">Home</a></li>
+							<li><span>Level 1</span>
+								<ul>
+									<li><a href="#">Level 2</a></li>
+									<li><span>Level 2</span>
+										<ul>
+											<li><a href="#">Level 3</a></li>
+											<li><a href="#">Level 3</a></li>
+											<li><a href="#">Level 3</a></li>
+										</ul>
+									</li>
+								</ul>        
+							</li>
+
+							<li><a href="#">About</a></li>
 						</ul>
 					</div>
 				</div>
+
 				<hr>
 
 				<div class='slider'>
@@ -152,7 +165,7 @@
 							<span>Regular Checkbox</span>
 						</label>
 					</fieldset>
-					
+
 					<fieldset class="col-md-4">
 						<legend>Radio Buttons</legend>
 						<label for="regularRadio">
@@ -164,7 +177,7 @@
 							<span>Regular Radio</span>
 						</label>
 					</fieldset>
-					
+
 					<br>
 
 					<fieldset class="col-md-12">
@@ -246,7 +259,7 @@
 
 					<h4>Animate Class</h4>
 					<p>Add the class <code>animate</code> to whatever you want</p>
-					
+
 					<style type="text/css">
 						.animate_sample:hover{ padding: 2em; }
 					</style>

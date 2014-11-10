@@ -4,6 +4,7 @@ Nav
 
 .header { 
 	position: relative;
+	z-index: 10;
 }
 
 #toggle,
@@ -11,9 +12,73 @@ Nav
 	display: none; 
 }
 
+/*--------------------------------------------------------------
+Dropdown
+--------------------------------------------------------------*/
+
+ul.menu {
+
+	li{
+		background: $menu-background-color;
+
+		a, span{
+			color: $link-color;
+			cursor: pointer;
+			line-height: $menu-item-height;
+			padding: $menu-item-padding;
+			&:after { content: ' »'; } 
+			&:only-child:after { content: ''; }  
+		}
+	}
+
+	/* Hide Dropdowns by Default */
+	ul {
+		display: none;
+
+		/* Fisrt Tier Dropdown */
+		li {
+			float: none;
+			position: relative;
+			border-bottom: none;
+			margin-left: 0;
+		}
+
+		/* Second, Third and more Tiers */
+		ul li {
+			margin-top: 0;
+		}
+	}
+
+	/* Display Dropdowns on Hover */
+	li:hover > ul {
+		display:list-item;
+		list-style: none;
+		margin-left: 0;
+	}
+}
+
+@include above(sm){
+	ul.menu{
+		ul {
+			position: absolute;
+			li{
+				width: $menu-child-width;
+			}
+			ul li{
+				left: $menu-child-width;
+				top: -$menu-item-height;
+			}
+		}
+	}
+}
+
+/*--------------------------------------------------------------
+Mobile
+--------------------------------------------------------------*/
+
 @include below(sm){
 
-	.menu { 
+	ul.menu { 
 		display: none; 
 		opacity: 0;
 		z-index: 10;
@@ -26,11 +91,10 @@ Nav
 			width: 100%; 
 			margin: 0;
 
-			& > a { 
+			& > a, & > span { 
 				display: block; 
 				width: 100%; 
 				text-decoration: none;
-				padding: 1em;
 				background: #fff;
 			}
 		}
@@ -58,3 +122,4 @@ Nav
 	}
 	
 }
+
