@@ -6,7 +6,7 @@ module.exports = function(grunt) {
 				options:{
 					port:9000,
 					hostname:"localhost",
-					bases: ['/Users/Chris/Github/sass/'],
+					bases: ['/Users/Chris/Github/genesis/'],
 					livereload: true
 				}
 			}
