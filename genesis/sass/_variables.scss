@@ -1,13 +1,14 @@
-$base-font-size: 16px;
-$border-color: #ddd;
-$global-radius: 3px;
-$link-color: #428BCA;
+$base-font-size: 16px!default;
+$border-color: #ddd!default;
+$global-radius: 3px!default;
+$link-color: #428BCA!default;
 
 /*--------------------------------------------------------------
 Colors
 --------------------------------------------------------------*/
 
-$color-primary: #fff;
+$color-primary: #fff!default;
+$color-secondary: #fff!default;
 
 /*--------------------------------------------------------------
 Grid
@@ -18,7 +19,7 @@ $screen-sizes: (
 	sm : 768px,
 	md : 992px,
 	lg : 1200px
-	);
+	)!default;
 
 $grid-columns: 12;
 
@@ -29,13 +30,14 @@ $grid-gutter-width: 30px;
 Typography
 --------------------------------------------------------------*/
 
-$line-height: 1.4;
-$body-color: #444;
+$body-font-family: sans-serif!default;
+$line-height: 1.4!default;
+$body-color: #444!default;
 
-$headings-font-family: sans-serif;
-$headings-font-weight: normal;
-$headings-color: #000; 
-$headings-small-color: #6F6F6F;
+$headings-font-family: sans-serif!default;
+$headings-font-weight: normal!default;
+$headings-color: #000!default; 
+$headings-small-color: #6F6F6F!default;
 
 /*--------------------------------------------------------------
 Buttons
@@ -43,16 +45,23 @@ Buttons
 
 $button: (
 	color: $body-color,
+	border: 1px solid $border-color,
 	background: $color-primary,
 	hover-background: darken($color-primary,5),
 	hover-color: $body-color,
-	);
+	)!default;
+
+/*--------------------------------------------------------------
+Slider
+--------------------------------------------------------------*/
+
+$slider-height: 25em!default;
 
 /*--------------------------------------------------------------
 Menu
 --------------------------------------------------------------*/
 
-$menu-background-color: #eee;
-$menu-item-height: 2.5em;
-$menu-child-width: 10em;
-$menu-item-padding: 0 0.5em;
+$menu-background-color: #eee!default;
+$menu-item-height: 2.5em!default;
+$menu-child-width: 10em!default;
+$menu-item-padding: 0 0.5em!default;

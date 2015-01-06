@@ -7,8 +7,10 @@ h1-h6
 --------------------------------------------------------------*/
 
 body{
+	font-family: $body-font-family;
 	line-height: $line-height;
 	color: $body-color;
+	-webkit-font-smoothing: antialiased;
 }
 
 a {
@@ -17,6 +19,9 @@ a {
 	&:hover, &:focus {
 		color: darken($link-color,10);
 		text-decoration: underline;
+	}
+	img{
+		vertical-align: middle;
 	}
 }
 
@@ -89,4 +94,23 @@ code {
 	padding: 0.15em 0.35em 0;
 	border-radius: $global-radius;
 	font-size: 0.9em
+}
+
+// Text Left, Right & Center
+.text-left{
+	text-align: left;
+}
+.text-right{
+	text-align: right;
+}
+.text-center{
+	text-align: center;
+}
+
+// Text Color
+.text-primary{
+	color: $color-primary;
+}
+.text-secondary{
+	color: $color-secondary;
 }

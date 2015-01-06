@@ -19,20 +19,21 @@ module.exports = function(grunt) {
 					sourcemap: 'none'
 				},
 				files: {                       
-					'style.css': 'style.scss',    
+					'style.css': 'style.scss',
+					'test/pivot/style.css': 'test/pivot/style.scss'
 				}
 			}
 		},
 
 		autoprefixer: {
 			file: {
-				src: 'style.css'
+				src: ['style.css', 'test/pivot/style.css']
 			},
 		},
 
 		watch: {
 			sass:{
-				files: ['genesis/sass/*.scss'],
+				files: ['genesis/sass/*.scss','test/pivot/*'],
 				tasks: ['sass','autoprefixer'],
 			},
 			options: {

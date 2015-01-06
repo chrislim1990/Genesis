@@ -1,0 +1,156 @@
+$color-primary: #29d9c2;
+$color-secondary: #01A2A6;
+
+// Typo
+$body-color: #777;
+$link-color: $color-secondary;
+$line-height: 1.6;
+
+// Heading
+$body-font-family: "Open Sans", sans-serif;
+
+$headings-font-family: $body-font-family;
+$headings-font-weight: 300;
+$headings-color: #333;
+
+$menu-background-color:#fff;
+$slider-height: 40.5em;
+
+@import "../../genesis/sass/genesis";
+
+body{ font-size: 0.92em; }
+
+h4, h5{ font-weight: 600; }
+
+h4{ font-size: 1.2em; }
+
+.btn{
+	border: 2px solid $color-primary;
+	border-radius: 1000px;
+	padding: 0.5em 2em;
+	font-weight: 600;
+	letter-spacing: .1em;
+	text-transform: uppercase;
+	color: #fff;
+
+	&.alt{
+		background: none;
+		color: $color-primary;
+		
+		&.white{
+			border-color: #fff;
+			color: #fff;
+		}
+	}
+}
+
+.utility{
+	font-size: .85em;
+	padding: 1em 0;
+	border-bottom: 1px solid $border-color;
+
+	.language img{ width: 1.5em; }
+}
+
+.main-nav{
+	font-size: .9em;
+	padding: 2.5em 0;
+
+	.logo img{ width: 6em; }
+	
+	.social i{ 
+		margin-left: 1em;
+		color: $headings-color;
+	}
+	
+	.menu{
+		
+		li{
+			margin-left: 2em;
+			
+			a,span{
+				text-transform: uppercase;
+				font-weight: 600;
+				color: $body-color;
+			}
+		}
+	}
+}
+
+.slider	.slide{
+	padding: 0;
+	
+	.slidecontent .row{
+		@extend .valign;
+		height: $slider-height;
+		h2{ color: #fff; }
+	}
+}
+
+#slideposition{ margin-bottom: 0; }
+
+%section-padding{ padding: 5em 0; }
+
+.features{
+	background: $color-secondary;
+	@extend %section-padding;
+	
+	*{ color: #fff; }
+	i{ margin-bottom: 0.5em; }
+	p{ margin-bottom: 0; }
+}
+
+.welcome, .happenings{
+	background: #F4F4F4;
+	@extend %section-padding;
+	
+	img{ width: 100%; }
+}
+
+.showcase{ @extend %section-padding; }
+
+.happenings p{
+	font-size: 0.8em;
+	text-transform: uppercase;
+}
+
+.clients{
+	@extend %section-padding;
+	
+	div{
+		height: 6em;
+		line-height: 6em;
+	}
+	
+	img{
+		max-width: 9em;
+		max-height: 4em;
+		opacity: 0.4;
+		vertical-align: middle;
+	}
+}
+
+.feature-box {
+	margin: 0;
+	
+	.box{
+		padding: 0;
+		
+		*{ color: #fff; }
+		div{ padding: 3em; }
+	}
+}
+
+.twitter{ @extend %section-padding; }
+
+.footer{
+	padding: 2em 0;
+	background: #2F2933;
+
+	p{ margin:0; }
+
+	a, i{
+		color: #fff;
+		margin-left: 1em;
+	}
+}

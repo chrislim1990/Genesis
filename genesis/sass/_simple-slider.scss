@@ -1,6 +1,6 @@
 .slider{
     width: 100%;
-    height: 25em;
+    height: $slider-height;
     overflow: hidden;
     position: relative;
     z-index: 1;
@@ -14,8 +14,8 @@
     float: left;
     padding: 1em 2em;
     position: absolute;
-    background-size: cover;
     background: no-repeat center center;
+    background-size: cover;
 }
 
 #slideposition {

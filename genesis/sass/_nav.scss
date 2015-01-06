@@ -2,7 +2,7 @@
 Nav
 --------------------------------------------------------------*/
 
-.header { 
+.nav { 
 	position: relative;
 	z-index: 10;
 }
@@ -17,7 +17,8 @@ Dropdown
 --------------------------------------------------------------*/
 
 ul.menu {
-
+	margin-bottom: 0;
+	
 	li{
 		background: $menu-background-color;
 
