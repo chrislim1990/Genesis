@@ -1,14 +1,23 @@
-$base-font-size: 16px!default;
-$border-color: #ddd!default;
-$global-radius: 3px!default;
-$link-color: #428BCA!default;
+/*--------------------------------------------------------------
+Global
+--------------------------------------------------------------*/
+
+$base-font-size: 15px;
+$global-radius: 0.3em;
+$global-padding: 1em;
 
 /*--------------------------------------------------------------
 Colors
 --------------------------------------------------------------*/
 
-$color-primary: #fff!default;
-$color-secondary: #fff!default;
+$color-primary: #33C3F0;
+$color-secondary: #fff;
+$color-white: #fff;
+
+$link-color: $color-primary;
+$border-color: #ddd;
+
+$body-color: #444;
 
 /*--------------------------------------------------------------
 Grid
@@ -19,7 +28,7 @@ $screen-sizes: (
 	sm : 768px,
 	md : 992px,
 	lg : 1200px
-	)!default;
+	);
 
 $grid-columns: 12;
 
@@ -30,38 +39,119 @@ $grid-gutter-width: 30px;
 Typography
 --------------------------------------------------------------*/
 
-$body-font-family: sans-serif!default;
-$line-height: 1.4!default;
-$body-color: #444!default;
+$body-font-family: sans-serif;
+$line-height: 1.4;
 
-$headings-font-family: sans-serif!default;
-$headings-font-weight: normal!default;
-$headings-color: #000!default; 
-$headings-small-color: #6F6F6F!default;
+$headings-size: (
+	h1 : 2.6em,
+	h2 : 2.2em,
+	h3 : 1.7em,
+	h4 : 1.3em,
+	h5 : 1.0em,
+	h6 : 0.9em,
+	);
+
+$heading: (
+	font-family: sans-serif,
+	font-weight: normal,
+	color: $body-color,
+	margin-top: 0.2em,
+	margin-bottom: 0.5em,
+	);
+
+$alt-heading: (
+	font-family: serif,
+	);
+
+$link:(
+	text-decoration: none,
+	color: $link-color,
+	);
+
+$link-hover:(
+	text-decoration: underline,
+	color: darken($link-color,10),
+	);
 
 /*--------------------------------------------------------------
 Buttons
 --------------------------------------------------------------*/
 
 $button: (
-	color: $body-color,
-	border: 1px solid $border-color,
+	font-size: 0.9em,
+
+	color: $color-white,
+	border: 1px solid $color-primary,
 	background: $color-primary,
-	hover-background: darken($color-primary,5),
-	hover-color: $body-color,
-	)!default;
+
+	border-radius: $global-radius,
+	padding: $global-padding/2 $global-padding,
+	);
+
+$button-hover: (
+	color: $color-white,
+	border-color: darken($color-primary,10),
+	background: darken($color-primary,10),
+	);
+
+$button-lg:(
+	padding: $global-padding $global-padding*2,
+	font-size: 1em,
+	);
+
+$alt-button: (
+	color: $body-color,
+	border-color: $border-color,
+	background: $color-secondary,
+	);
+
+$alt-button-hover: (
+	border-color: darken($border-color,20),
+	);
 
 /*--------------------------------------------------------------
 Slider
 --------------------------------------------------------------*/
 
-$slider-height: 25em!default;
+$slider-height: 25em;
 
 /*--------------------------------------------------------------
 Menu
 --------------------------------------------------------------*/
 
-$menu-background-color: #eee!default;
-$menu-item-height: 2.5em!default;
-$menu-child-width: 10em!default;
-$menu-item-padding: 0 0.5em!default;
+$menu-item-height: 2.5em;
+$menu-child-width: 10em;
+
+$menu-btn:(
+	background: $color-primary,
+	color: $color-white,
+	border-radius: 999em,
+	line-height: $menu-item-height,
+	padding: 0 2em,
+	);
+
+$menu-1st-tier-btn:(
+	color: $body-color,
+	border-radius: 0,
+	background: $border-color,
+	);
+
+$menu-2nd-tier-btn:(
+
+	);
+
+/*--------------------------------------------------------------
+Icons
+--------------------------------------------------------------*/
+$icons:(
+	color: $color-white,
+	background: $color-primary,
+	border: 1px solid $color-primary,
+	padding: 1em,
+	);
+
+$icons-hover:(
+	color: $body-color,
+	background: $color-secondary,
+	border-color: $border-color,
+	);

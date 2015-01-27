@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="UTF-8">
 	<title>Genesis MK II</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,197 +10,311 @@
 </head>
 <body>
 
+	<div class="toc">
+		<h4>Content</h4>
+		<ol>
+			<li><a href="#Navigation">Navigation</a></li>
+			<li><a href="#Slider">Slider</a></li>
+			<li><a href="#Typography">Typography</a></li>
+			<li><a href="#Buttons">Buttons</a></li>
+			<li><a href="#Forms">Forms</a></li>
+			<li>
+				<a href="#Helpers">Helpers</a>
+				<ol>
+					<li><a href="#Background Cover">Background Cover</a></li>
+					<li><a href="#Darken Background">Darken Background</a></li>
+					<li><a href="#Inline List">Inline List</a></li>
+					<li><a href="#Vertical Align">Vertical Align</a></li>
+					<li><a href="#Flex Video">Flex Video</a></li>
+					<li><a href="#Animate">Animate</a></li>
+					<li><a href="#Icons">Icons</a></li>
+				</ol>
+			</li>
+			<li><a href="#Grid">Grid</a></li>
+			<li>
+				<a href="#Mixins">Mixins</a>
+				<ol>
+					<li><a href="#Margin Mixin">Margin Mixin</a></li>
+					<li><a href="#Size Mixin">Size Mixin</a></li>
+					<li><a href="#Position Mixin">Position Mixin</a></li>
+					<li><a href="#List Margin">List Margin</a></li>
+					<li><a href="#Darken Mixin">Darken Mixin</a></li>
+				</ol>
+			</li>
+			<li>
+				<a href="#Fixes">Fixes</a>
+				<ol>
+					<li><a href="#Font Awesome Large Icon">Font Awesome Large Icon</a></li>
+				</ol>
+			</li>
+		</ol>
+	</div>
+
 	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
+		<div id="Navigation" class="row section">
+			<div class="col-md-12 doc-header">
+				<h3>Navigation</h3>
+				<p>Navigation menu with pure css, and mobile version.</p>
+			</div>
+			<div class="nav col-md-12">
+				<input type="checkbox" id="toggle" />
+				<div>
+					<label for="toggle" class="toggle btn" data-open="Main Menu" data-close="Close Menu" onclick></label>
+					<ul class="menu inline-list">
+						<li><a href="#">Home</a></li>
+						<li><span>Level 1</span>
+							<ul>
+								<li><a href="#">Level 2</a></li>
+								<li><span>Level 2</span>
+									<ul>
+										<li><a href="#">Level 3</a></li>
+										<li><a href="#">Level 3</a></li>
+										<li><a href="#">Level 3</a></li>
+									</ul>
+								</li>
+							</ul>        
+						</li>
 
-				<h3>Nav</h3>
-				<div class="nav">
-					<input type="checkbox" id="toggle" />
-					<div>
-						<label for="toggle" class="toggle btn" data-open="Main Menu" data-close="Close Menu" onclick></label>
-						<ul class="menu inline-list">
-							<li><a href="#">Home</a></li>
-							<li><span>Level 1</span>
-								<ul>
-									<li><a href="#">Level 2</a></li>
-									<li><span>Level 2</span>
-										<ul>
-											<li><a href="#">Level 3</a></li>
-											<li><a href="#">Level 3</a></li>
-											<li><a href="#">Level 3</a></li>
-										</ul>
-									</li>
-								</ul>        
-							</li>
-
-							<li><a href="#">About</a></li>
-						</ul>
-					</div>
+						<li><a href="#">About</a></li>
+					</ul>
 				</div>
-
-				<hr>
-
+			</div>
+		</div>
+		<div id="Slider" class="row section">
+			<div class="col-md-12 doc-header">
+				<h3>Slider</h3>
+				<p>Require simpleslider.js. Dont add col-md class along with the slider class. Slider class has width 100%, so it wont work. Use col-md class to wrap the slider instead. Slide by default has background-cover class.</p>
+			</div>
+			<div class="col-md-6">
 				<div class='slider'>
-					<div class='slide' style="background-image:url(http://fakeimg.pl/1200x400/eeeeee/)">
-						<div class='slidecontent'>
-							<h1>h1 - Very Large Header</h1>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam posuere cursus euismod.Aenean ut tortor leoing elit. Etiam posuere cursus euismod.Aenean ut tortor leo.</p>
+					<div class='darken slide valign bottom' style="background-image:url(https://unsplash.it/g/570/375?image=588)">
+						<div class='slide-content'>
+							<h3 class="text-white">Vertical Aligned Bottom</h3>
+							<p class="text-white">".valign" & ".darken" work well with ".slide".</p>
 						</div>
 					</div>
-					<div class='slide' style="background-image:url(http://fakeimg.pl/1200x400/)">
-						<div class='slidecontent'>
-							<h2>h2 - Large Header</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam posuere cursus euismod.Aenean ut tortor leo.</p>
+					<div class='slide' style="background-image:url(https://unsplash.it/570/375)">
+						<div class='slide-content'>
+							<h3 class="text-white">Background Cover</h3>
+							<p class="text-white">".slide" by default is ".background-cover" enabled.</p>
 						</div>
 					</div>
 				</div>
-
-				<br>
+			</div>
+		</div>
+		<div id="Typography" class="row section">
+			<div class="col-md-12 doc-header">
 				<h3>Typography</h3>
 				<p>The typography of Skeleton is designed to create a strong hierarchy with basic styles. </p>
-				<br>
-
-				<h1>h1 - This is a very large header.</h1>
-				<h2>h2 - This is a large header.</h2>
-				<h3>h3 - This is a medium header.</h3>
-				<h4>h4 - This is a moderate header.</h4>
-				<h5>h5 - This is a small header.</h5>
-				<h6>h6 - This is a tiny header.</h6>
-				<br>
-
-				<div class="row">
-					<div class="col-md-6">
-						<p class="lead">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.</p>
-						<p> Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula. </p>
-						<p> Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla. </p>
-						<p> Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit non mi porta gravida at eget metus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. </p>
-						<br>
-
-						<h4>Code</h4>
-						<p>For example, to close your browser hit <code>Cmd</code> + <code>Q</code></p>
-					</div>
-
-					<div class="col-md-6">
-
-						<h4>Unordered</h4>
-						<p>A list of items in which the order does not explicitly matter.</p>
-
-						<ul class="disc">
-							<li>List item with a much longer description or more content.</li>
-							<li>List item</li>
-							<li>List item
-								<ul>
-									<li>Nested List Item</li>
-									<li>Nested List Item</li>
-									<li>Nested List Item</li>
-								</ul>
-							</li>
-							<li>List item</li>
-							<li>List item</li>
-							<li>List item</li>
-						</ul>
-
-						<br>
-
-						<h4>Ordered</h4>
-						<p>A list of items in which the order does explicitly matter.</p>
-
-						<ol>
-							<li>List Item 1</li>
-							<li>List Item 2</li>
-							<li>List Item 3</li>
-						</ol>
-					</div>
+			</div>
+			<div class="clearfix">
+				<div class="col-md-6">
+					<h1>h1 - This is a very large header.</h1>
+					<h2>h2 - This is a large header.</h2>
+					<h3>h3 - This is a medium header.</h3>
+					<h4>h4 - This is a moderate header.</h4>
+					<h5>h5 - This is a small header.</h5>
+					<h6>h6 - This is a tiny header.</h6>
 				</div>
-
+				<div class="col-md-6">
+					<h1 class="alt">h1 - This is a very large header.</h1>
+					<h2 class="alt">h2 - This is a large header.</h2>
+					<h3 class="alt">h3 - This is a medium header.</h3>
+					<h4 class="alt">h4 - This is a moderate header.</h4>
+					<h5 class="alt">h5 - This is a small header.</h5>
+					<h6 class="alt">h6 - This is a tiny header.</h6>
+				</div>
+			</div>
+			<br>
+			<div class="col-md-4">
+				<p class="lead">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.</p>
+				<br>
+				<h4>Text Alignments</h4>
 				<hr>
+				<h5>Left Aligned Text</h5>
+				<p class="text-left"> Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula. </p>
+				<br>
+				<h5>Right Aligned Text</h5>
+				<p class="text-right"> Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla. </p>
+				<br>
+				<h5>Center Aligned Text</h5>
+				<p class="text-center"> Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit non mi porta gravida at eget metus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. </p>
+				<br>
+				<h5>Justify Aligned Text</h5>
+				<p class="text-justify"> Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit non mi porta gravida at eget metus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. </p>
+				<br>
+				<br>
+				<h4>Code</h4>
+				<p>For example, to close your browser hit <code>Cmd</code> + <code>Q</code></p>
+			</div>
 
+			<div class="col-md-4">
+
+				<h4>Lists</h4>
+				<hr>
+				<h5>Unordered</h5>
+				<p>A list of items in which the order does not explicitly matter.</p>
+
+				<ul class="disc">
+					<li>List item with a much longer description or more content.</li>
+					<li>List item</li>
+					<li>List item
+						<ul>
+							<li>Nested List Item</li>
+							<li>Nested List Item</li>
+							<li>Nested List Item</li>
+						</ul>
+					</li>
+					<li>List item</li>
+					<li>List item</li>
+					<li>List item</li>
+				</ul>
+
+				<br>
+
+				<h5>Ordered</h5>
+				<p>A list of items in which the order does explicitly matter.</p>
+
+				<ol>
+					<li>List Item 1</li>
+					<li>List Item 2</li>
+					<li>List Item 3</li>
+				</ol>
+
+				<br>
+
+				<h5>Custom List</h5>
+				<p>
+					A list of items with custom icon. Add <code>custom</code> class to the ul. Then change the <code>li:before</code> to the prefer fa unicode. Refer to <a href="#List Margin">List Margin</a> mixin to see how to alter the margin left.
+				</p>
+
+				<style type="text/css">
+					.custom.beer li:before{content:'\f0fc';}
+				</style>
+
+				<ul class="custom beer">
+					<li>List Item 1</li>
+					<li>List Item 2</li>
+					<li>List Item 3</li>
+				</ul>
+
+
+			</div>
+			<div class="col-md-4">
+			</div>
+		</div>
+		<div id="Buttons" class="row section">
+			<div class="col-md-12 doc-header">
 
 				<h3>Buttons</h3>
 				<p>Use any of the available button classes to quickly create a styled button.</p>
-				<br>
-
+			</div>
+			<div class="col-md-12">
 				<button type="button" class="btn">Default</button>
 				<a href="#" class="btn">Link as button</a>
-				<button type="button" class="btn btn-lg">Large Button</button>
+				<button type="button" class="btn alt">Alternate Button</button>
+				<button type="button" class="btn lg">Large Button</button>
 
-				<hr>
+			</div>
+		</div>
+		<div id="Forms" class="row section">
+			<div class="col-md-12 doc-header">
 
 				<h3>Forms</h3>
 				<p>Forms can be one of the biggest pains for web developers, but just use these dead simple styles and you should be good to go.</p>
 				<br>
 
-				<form class="row">
-					<fieldset class="col-md-6">
-						<label for="regularInput">Regular Input</label>
-						<input type="text" id="regularInput">
-					</fieldset>
-					<fieldset class="col-md-6">
-						<label for="regularInput">Regular Input</label>
-						<input type="text" id="regularInput">
-					</fieldset>
-					<fieldset class="col-md-12">
-						<label for="regularTextarea">Regular Textarea</label>
-						<textarea id="regularTextarea"></textarea>
-					</fieldset>
+			</div>
 
-					<fieldset class="col-md-4">
-						<label for="selectList">Select List</label>
-						<select id="selectList">
-							<option value="Option 1">Option 1</option>
-							<option value="Option 2">Option 2</option>
-							<option value="Option 3">Option 3</option>
-							<option value="Option 4">Option 4</option>
-						</select>
-					</fieldset>
+			<form>
+				<fieldset class="col-md-6">
+					<label for="regularInput">Regular Input</label>
+					<input type="text" id="regularInput">
+				</fieldset>
+				<fieldset class="col-md-6">
+					<label for="regularInput">Regular Input</label>
+					<input type="text" id="regularInput">
+				</fieldset>
+				<fieldset class="col-md-12">
+					<label for="regularTextarea">Regular Textarea</label>
+					<textarea id="regularTextarea"></textarea>
+				</fieldset>
 
-					<fieldset class="col-md-4">
-						<legend>Checkboxes</legend>
-						<label for="regularCheckbox">
-							<input type="checkbox" id="regularCheckbox" value="checkbox 1">
-							<span>Regular Checkbox</span>
-						</label>
-						<label for="secondRegularCheckbox">
-							<input type="checkbox" id="secondRegularCheckbox" value="checkbox 2">
-							<span>Regular Checkbox</span>
-						</label>
-					</fieldset>
+				<fieldset class="col-md-4">
+					<label for="selectList">Select List</label>
+					<select id="selectList">
+						<option value="Option 1">Option 1</option>
+						<option value="Option 2">Option 2</option>
+						<option value="Option 3">Option 3</option>
+						<option value="Option 4">Option 4</option>
+					</select>
+				</fieldset>
 
-					<fieldset class="col-md-4">
-						<legend>Radio Buttons</legend>
-						<label for="regularRadio">
-							<input type="radio" name="radios" id="regularRadio" value="radio 1">
-							<span>Regular Radio</span>
-						</label>
-						<label for="secondRegularRadio">
-							<input type="radio" name="radios" id="secondRegularRadio" value="radio 2">
-							<span>Regular Radio</span>
-						</label>
-					</fieldset>
+				<fieldset class="col-md-4">
+					<legend>Checkboxes</legend>
+					<label for="regularCheckbox">
+						<input type="checkbox" id="regularCheckbox" value="checkbox 1">
+						<span>Regular Checkbox</span>
+					</label>
+					<label for="secondRegularCheckbox">
+						<input type="checkbox" id="secondRegularCheckbox" value="checkbox 2">
+						<span>Regular Checkbox</span>
+					</label>
+				</fieldset>
 
-					<br>
+				<fieldset class="col-md-4">
+					<legend>Radio Buttons</legend>
+					<label for="regularRadio">
+						<input type="radio" name="radios" id="regularRadio" value="radio 1">
+						<span>Regular Radio</span>
+					</label>
+					<label for="secondRegularRadio">
+						<input type="radio" name="radios" id="secondRegularRadio" value="radio 2">
+						<span>Regular Radio</span>
+					</label>
+				</fieldset>
 
-					<fieldset class="col-md-12">
-						<button type="submit" class="btn">Submit Form</button>
-					</fieldset>
+				<br>
 
-				</form>
+				<fieldset class="col-md-12">
+					<button type="submit" class="btn">Submit Form</button>
+				</fieldset>
 
-				<hr>
-
+			</form>
+		</div>
+		<div id="Helpers" class="row section">
+			
+			<div class="col-md-12 doc-header">
 				<h3>Helpers</h3>
 				<p>Some helpers to save time</p>
-				<br>
+			</div>
+
+			<div class="col-md-12" id="Background Cover">
 
 				<h4>Background Cover</h4>
 				<p>Add <code>background-cover</code> class to the div</p>
-				<div class="background-cover" style="background-image:url(http://fakeimg.pl/1500x1500/);height:400px"><h2>Hi there</h2></div>
-				<br>
+				
+				<div class="block">
+					<p>Without background-cover</p>
+				</div>
+
+				<div class="background-cover block">
+					<p>With background-cover</p>
+				</div>
+			</div>
+
+			<div class="col-md-12" id="Darken Background">
 				<h4>Darken Background</h4>
-				<p>Add <code>darken</code> class to the div</p>
-				<div class="darken background-cover" style="background-image:url(http://fakeimg.pl/1000x400/);height:400px;"><h2 style="color:#fff">Hi there</h2></div>
-				<br>
+				<p>
+					Add <code>darken</code> class to the div. Default is 0.3 opacity, #222 color. To alter it, refer to <a href="#Darken Mixin">Darken</a> Mixin.
+				</p>
+
+				<div class="darken background-cover block">
+					<p>0.3 opacity, #222</p>
+				</div>
+			</div>
+
+			<div class="col-md-12" id="Inline List">
 				<h4>Inline List</h4>
 				<p>Just add the <code>inline-list</code> to the ul</p>
 
@@ -210,98 +325,244 @@
 					<li><a href="#">Link 4</a></li>
 					<li><a href="#">Link 5</a></li>
 				</ul>
-				<br>
+			</div>
+			
+			<div class="col-md-12" id="Vertical Align">
 
 				<h4>Vertical Align</h4>
-				<p>Added <code>valign</code> class to the parent, then wrap the child in
-					<code>div</code> will do.</p>
+				<p>
+					Added <code>valign</code> class to the parent, then wrap the child in
+					<code>div</code> will do. Add <code>bottom</code> to vertical align bottom.
+				</p>
 
-					<div class="row">
-						<div class="valign col-md-4 row">
-							<div class="col-md-4">
-								<img src="http://fakeimg.pl/100x300/">
-							</div>
-							<div class="col-md-8">
-								<p>Vertical Align</p>
-							</div>
-						</div>
-
-						<div class="valign col-md-4 row">
-							<div class="col-md-4">
-								<img src="http://fakeimg.pl/100x300/">
-							</div>
-							<div class="col-md-8">
-								<p>Vertical Align with a much longer description or more content.</p>
-							</div>
-						</div>
-
+				<div class="row">
+					<div class="valign bottom col-md-4 row">
 						<div class="col-md-4">
-							<div class="valign" style="height:300px;width:300px;background-image:url(http://fakeimg.pl/300x300/)">
-								<div class="col-md-12">
-									<h4>Hi there</h4>
-									<p>Vertical Align with image background</p>
-								</div>
-							</div>
+							<div class="block"></div>
 						</div>
-
-					</div>
-					<br>
-					<br>
-
-					<h4>Flex Video</h4>
-
-					<div class="row">
-						<div class="col-md-6">
-							<p>16:9 aspect ratio</p>
-							<div class="embed-responsive embed-responsive-16by9">
-								<iframe class="embed-responsive-item" src="//www.youtube.com/embed/qOw44VFNk8Y" allowfullscreen></iframe>
-							</div>
-						</div>
-						<div class="col-md-6">
-							<p>4:3 aspect ratio</p>
-							<div class="embed-responsive embed-responsive-4by3">
-								<iframe class="embed-responsive-item" src="//www.youtube.com/embed/qOw44VFNk8Y" allowfullscreen></iframe>
-							</div>
+						<div class="col-md-8">
+							<p>Vertical Align Bottom</p>
 						</div>
 					</div>
 
-					<h4>Animate Class</h4>
-					<p>Add the class <code>animate</code> to whatever you want</p>
+					<div class="valign col-md-4 row">
+						<div class="col-md-4">
+							<div class="block"></div>
+						</div>
+						<div class="col-md-8">
+							<p>Vertical Align with a much longer description or more content.</p>
+						</div>
+					</div>
 
-					<style type="text/css">
-						.animate_sample:hover{ padding: 2em; }
-					</style>
-
-					<a href="" class="btn animate animate_sample">With Animate</a>
-					<a href="" class="btn animate_sample">Without Animate</a>
-
-					<hr>
+					<div class="col-md-4">
+						<div class="valign block">
+							<div class="col-md-12">
+								<h4>Hi there</h4>
+								<p>Vertical Align with image background</p>
+							</div>
+						</div>
+					</div>
 
 				</div>
+			</div>
 
+			<div class="col-md-12" id="Flex Video">
+				<h4 >Flex Video</h4>
+				<p>Embed video with 100% width while maintaining the proportion.</p>
+				<div class="row">
+					<div class="col-md-6">
+						<p>16:9 aspect ratio</p>
+						<div class="embed-responsive embed-responsive-16by9">
+							<iframe class="embed-responsive-item" src="//www.youtube.com/embed/qOw44VFNk8Y" allowfullscreen></iframe>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<p>4:3 aspect ratio</p>
+						<div class="embed-responsive embed-responsive-4by3">
+							<iframe class="embed-responsive-item" src="//www.youtube.com/embed/qOw44VFNk8Y" allowfullscreen></iframe>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-12" id="Animate">
+				<h4>Animate</h4>
+				<p>Add the class <code>animate</code> to whatever you want. Or you can use mixin <code>@include transition($property, $time)</code></p>
+
+				<a href="" class="btn alt animate animate_sample">With Animate</a>
+				<a href="" class="btn alt animate_sample">Without Animate</a>
+				<a href="" class="btn alt animate_sample custom">With <b>transition(padding,1000ms)</b></a>
+			</div>
+
+			<div class="col-md-12" id="Icons">
+				<h4>Icons</h4>
+				<p>
+					Add class <code>icons</code> to the wrapper. Optionaly add class <code>round</code> class to the <code>icons</code> wrapper to make all the icons round. if only want certain icon round, add <code>round</code> class to the <code>i</code> tag.
+				</p>
+
+				<div class="row">
+					<div class="col-md-4">
+						<h5>Square Icons (Default)</h5>
+						<div class="icons">
+							<i class="fa fa-car"></i>
+							<i class="fa fa-car"></i>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<h5>Round Icons</h5>
+						<div class="icons round">
+							<i class="fa fa-car"></i>
+							<i class="fa fa-car"></i>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<h5>Mixed Icons</h5>
+						<div class="icons">
+							<i class="fa fa-car"></i>
+							<i class="fa fa-car round"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div id="Grid" class="row section">	
+			<div class="col-md-12 doc-header">
+				<h3>Grid</h3>
+				<p>The grid default is 12 columns. Spaced using padding. Available breakpoint are <code>xs</code>, <code>sm</code>, <code>md</code>, <code>lg</code>. Available classes are <code>col-[breakpoint]-[num]</code>,<code>col-[breakpoint]-offset-[num]</code>. Wrap the columns in a row to cancel the first and last columns extra padding.</p>
+				<br>
+			</div>
+			<div class="grid">
+
+				<div class="col-md-1">.col-md-1</div>
+				<div class="col-md-2">.col-md-2</div>
+				<div class="col-md-3">.col-md-3</div>
+				<div class="col-md-4 col-md-offset-2">.col-md-4 .col-md-offset-2</div>
 
 				<div class="col-md-2 col-xs-6">.col-md-2 .col-xs-6</div>
 
 				<div class="col-md-4 col-xs-6">.col-md-4 .col-xs-6</div>
 
-				<div class="col-md-5 col-md-offset-1 col-xs-12">
-
-					LVL 1: .col-md-5 .col-md-offset-1 .col-xs-12
-
+				<div class="col-md-6 col-xs-12">
 					<div class="row">
-						<div class="col-md-8 col-xs-6"> LVL 2: .col-md-8 .col-xs-6</div>
-						<div class="col-md-4 col-xs-6"> LVL 2: .col-md-4 .col-xs-6</div>
+						<div class="col-md-8 col-xs-6"> <b>Nested:</b> .col-md-8 .col-xs-6</div>
+						<div class="col-md-4 col-xs-6"> <b>Nested:</b> .col-md-4 .col-xs-6</div>
 					</div>
-
 				</div>
+			</div>
+		</div>
 
+		<div id="Mixins" class="row section">
+			
+			<div class="col-md-12 doc-header">
+				<h3>Mixins</h3>
+				<p>Mixins...</p>
 			</div>
 
+			<div id="Margin Mixin" class="col-md-12">
+				<h4>Margin Mixin</h4>
+				<p>
+					Enable 1 line code for different direction margin. <code>@include margin($t:1em,$r:1em,$b:1em,$l:1em)</code>
+					<br>
+					The direction is optional, just put those you need. example: <code>margin($t:1em,$b:3em)</code>
+				</p>
+
+				<a class="btn alt margin_1">Top 1em, Btm 3em</a>
+				<a class="btn alt margin_2">Top 3em, Btm 1em, Left 2em</a>
+				<a class="btn alt margin_3">Top 3em, Right 3em</a>
+			</div>
+
+			<div id="Size Mixin" class="col-md-12">
+				<h4>Size Mixin</h4>
+				<p>
+					Shorthand for height and width. <code>@include size($h,$w)</code>
+					If width not defined, it will auto inherit height.
+				</p>
+
+				<div class="btn alt size_1">Height and width both 20em</div>
+				<div class="btn alt size_2">Height 10em,width 20em</div>
+				<div class="btn alt size_3">Height 5em,width 20em</div>
+			</div>
+
+			<div id="Position Mixin" class="col-md-12">
+				<h4>Position Mixin</h4>
+				<p>
+					Shorthand for position. First argurement is $p (position: absolute, relative, fixed), follow with $t, $r, $b, $l(top, left, bottom, right). Fixed will also work. I just dont want to messup the cheatsheet. <code>@include position($p, $t, $r, $b, $l)</code>
+				</p>
+
+				<div class="btn alt pos_1">Position absolute, bottom 1em</div>
+				<div class="btn alt pos_2">Position relative, left 20em</div>
+				<div class="btn alt pos_3">Position absolute, right 1em, top 0</div>
+			</div>
+
+			<div id="List Margin" class="col-md-12">
+				<h4>List Margin</h4>
+				<p>
+					Due to list (ol & ul) margin left need to specify in few places, I made a mixin for it. <code>@include list-margin(2em);</code> It is usefull when the li icon is longer and need more space.
+				</p>
+				<div class="row">
+					<div class="col-md-4">
+						<ul class="li_margin_1 custom">
+							<li>Default margin left custom list</li>
+							<li>list</li>
+						</ul>
+					</div>
+					<div class="col-md-4">
+						<ul class="li_margin_2 custom">
+							<li>2em margin left custom list</li>
+							<li>list</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div id="Darken Mixin" class="col-md-12">
+				<h4>Darken Mixin</h4>
+				<p>
+					Make the background darker with :before. <code>@include darken($o,$c)</code> (Opacity, Color). But you can't directly add padding to it, add the padding to it's child.
+				</p>
+
+				<div class="block background-cover darken_1 pull-left">
+					<p>Opacity 0.3 (Default)</p>
+				</div>
+
+				<div class="block background-cover darken_2 pull-left">
+					<p>Opacity 0.6</p>
+				</div>
+
+				<div class="block background-cover darken_3 pull-left">
+					<p>Opacity 0.6 with primary color</p>
+				</div>
+				<div class="block background-cover darken_4 pull-left">
+					<p>Opacity 0.6 with primary color when hover</p>
+				</div>
+			</div>
 		</div>
-		<script>
-			$(document).ready(function(){
-				$(".slider").simpleSlider();
-			});
-		</script>
-	</body>
-	</html>
+		
+		<div id="Fixes" class="row section">
+			<div class="col-md-12 doc-header">
+				<h3>Fixes</h3>
+				<p>Here are some misc fixes.</p>
+				<br>
+				<div id="fa-2x-fixes">
+					<h4 id="Font Awesome Large Icon">Font Awesome Large Icon</h4>
+					<p>Vertical aligned all larger icons.</p>
+					<p>
+						<i class="fa fa-camera-retro fa-lg"></i> fa-lg
+						<i class="fa fa-camera-retro fa-2x"></i> fa-2x
+						<i class="fa fa-camera-retro fa-3x"></i> fa-3x
+						<i class="fa fa-camera-retro fa-4x"></i> fa-4x
+						<i class="fa fa-camera-retro fa-5x"></i> fa-5x
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	$(document).ready(function(){
+		$(".slider").simpleSlider();
+	});
+</script>
+</body>
+</html>

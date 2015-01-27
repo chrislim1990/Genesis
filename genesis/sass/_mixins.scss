@@ -21,3 +21,64 @@
 		clear: both;
 	}
 }
+
+// Size
+@mixin size($h, $w: $h) {
+	height: $h;
+	width: $w;
+}
+
+// Margin
+@mixin margin (
+	$t: null,
+	$r: null,
+	$l: null,
+	$b: null ) {
+	margin-top: $t;
+	margin-right: $r;
+	margin-left: $l;
+	margin-bottom: $b;
+}
+
+// Position
+@mixin position(
+	$p: null,
+	$t: null,
+	$r: null,
+	$l: null,
+	$b: null ) {
+	position: $p;
+	top: $t;
+	right: $r;
+	left: $l;
+	bottom: $b;
+}
+
+// List margin left
+@mixin list-margin($m){
+	margin-left: $m;
+	li:before{
+		margin-left:-$m;
+		width: $m;
+	}
+}
+
+// Darken
+@mixin darken($o:0.3, $c:#222){
+	position:relative;
+
+	&:before{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0px;
+		content: '';
+		opacity: $o;
+		background-color: $c;
+		z-index: 0;
+	}
+	*{
+		z-index: 1;
+		position: relative;
+	}
+}

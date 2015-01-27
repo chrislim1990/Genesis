@@ -19,17 +19,12 @@ Dropdown
 ul.menu {
 	margin-bottom: 0;
 	
-	li{
-		background: $menu-background-color;
+	li a, li span{
+		cursor: pointer;
+		@include print-styles($menu-btn);
 
-		a, span{
-			color: $link-color;
-			cursor: pointer;
-			line-height: $menu-item-height;
-			padding: $menu-item-padding;
-			&:after { content: ' »'; } 
-			&:only-child:after { content: ''; }  
-		}
+		&:after { content: ' »'; } 
+		&:only-child:after { content: ''; }  
 	}
 
 	/* Hide Dropdowns by Default */
@@ -42,11 +37,13 @@ ul.menu {
 			position: relative;
 			border-bottom: none;
 			margin-left: 0;
+			a, span{ @include print-styles($menu-1st-tier-btn); }
 		}
 
 		/* Second, Third and more Tiers */
 		ul li {
 			margin-top: 0;
+			a, span{ @include print-styles($menu-2nd-tier-btn);}
 		}
 	}
 
@@ -96,7 +93,7 @@ Mobile
 				display: block; 
 				width: 100%; 
 				text-decoration: none;
-				background: #fff;
+				@include print-styles($menu-1st-tier-btn); 
 			}
 		}
 	}

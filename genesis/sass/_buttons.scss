@@ -1,6 +1,5 @@
 /*--------------------------------------------------------------
 Buttons
-
 --------------------------------------------------------------*/
 
 .btn {
@@ -9,38 +8,34 @@ Buttons
 	vertical-align: middle;
 	cursor: pointer;
 	background-image: none;
-	
-	border: map-get($button, border);
 	white-space: nowrap;
 	margin: 0;
-	padding: 0.5em 1em;
-	font-size: 0.85em;
-	color: map-get($button, color);
-	background: map-get($button, background);
+	
+	@include print-styles($button);
 
-	&:hover,
-	&:focus {
-		color: map-get($button, hover-color);
+	&:hover, &:focus {
 		text-decoration: none;
-		background: map-get($button, hover-background);
+		@include print-styles($button-hover);
 	}
 
-	&:active,
-	&.active {
+	&:active, &.active {
 		outline: 0;
 		background-image: none;
 	}
 
-	&.disabled,
-	&[disabled],
-	fieldset[disabled] & {
+	&.disabled, &[disabled], fieldset[disabled] & {
 		cursor: not-allowed;
 		pointer-events: none;
 		box-shadow: none;
 	}
-}
 
-.btn-lg{
-	padding: 1em 2em;
-	font-size: 1em;
+	&.alt{
+		@include print-styles($alt-button);
+
+		&:hover,&:focus{ @include print-styles($alt-button-hover); }
+	}
+
+	&.lg{
+		@include print-styles($button-lg);
+	}
 }

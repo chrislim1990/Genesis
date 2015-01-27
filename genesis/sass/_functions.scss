@@ -3,3 +3,10 @@
 	@if $target == 0 { @return 0 }
 	@return $target / $context + 0em;
 }
+
+// Echo all the variables in the map
+@mixin print-styles($map){
+ @each $property, $value in $map {
+   #{$property}: $value;
+ }
+}

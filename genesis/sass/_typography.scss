@@ -7,6 +7,7 @@ h1-h6
 --------------------------------------------------------------*/
 
 body{
+	font-size: $base-font-size;
 	font-family: $body-font-family;
 	line-height: $line-height;
 	color: $body-color;
@@ -14,32 +15,22 @@ body{
 }
 
 a {
-	color: $link-color;
-	text-decoration: none;
+	@include print-styles($link);
+
 	&:hover, &:focus {
-		color: darken($link-color,10);
-		text-decoration: underline;
+		@include print-styles($link-hover);
 	}
 	img{
 		vertical-align: middle;
 	}
 }
 
-$headings-size: (
-	h1 : 2.6em,
-	h2 : 2.2em,
-	h3 : 1.7em,
-	h4 : 1.3em,
-	h5 : 1.0em,
-	h6 : 0.9em,
-	) !default;
-
 %headings-style{
-	font-family: $headings-font-family;
-	font-weight: $headings-font-weight;
-	color: $headings-color;
-	margin-top: 0.2em;
-	margin-bottom: 0.5em;
+	@include print-styles($heading);
+}
+
+%alt-headings-style{
+	@include print-styles($alt-heading);
 }
 
 @mixin headings($from: 1, $to: 6){
@@ -47,6 +38,9 @@ $headings-size: (
 		h#{$i}, .h#{$i}{
 			@extend %headings-style;
 			font-size: map-get($headings-size, h#{$i});
+			&.alt{
+				@extend %alt-headings-style;
+			}
 		}
 	}
 }
@@ -67,8 +61,8 @@ ul, ol, {
 	margin: 0;
 	padding: 0;
 	line-height: 1.6;
-	margin-left: 1.1em;
-	margin-bottom: 1.1em;
+	margin-left: 1.2em;
+	margin-bottom: 1.2em;
 	list-style-position: outside;
 	font-family: inherit;
 	li{
@@ -76,14 +70,18 @@ ul, ol, {
 			margin-bottom: 0;			
 		}	
 	}
-}
 
-hr{
-	border: solid $border-color;
-	border-width: 1px 0 0;
-	clear: both;
-	margin: 1.2em 0;
-	height: 0;
+	&.custom{
+		list-style-type: none;
+
+		li:before{
+			@extend .fa;
+			margin-left:-1.2em;
+			width: 1.2em;
+			display:inline-block;
+			content:"\f0e7";
+		}
+	}
 }
 
 code {
@@ -105,6 +103,9 @@ code {
 }
 .text-center{
 	text-align: center;
+}
+.text-justify{
+	text-align: justify;
 }
 
 // Text Color

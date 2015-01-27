@@ -1,1 +1,109 @@
 @import "genesis/sass/genesis";
+
+// Cheatsheet show case only
+
+.text-white{ color:$color-white };
+
+.section{
+	padding: 3em 0;
+	border-bottom: 1px solid $border-color;
+
+	>div:not(.doc-header){
+		padding-top: 3em;
+
+		&:not(:last-child){
+			padding-bottom: 3em;
+			border-bottom: 1px dashed $border-color;	
+		}
+	}
+}
+
+.doc-header{
+	padding-bottom: 3em;
+}
+
+.toc{
+	font-size: 0.9em;
+	@include position(fixed,$t:1em,$r:1em);
+	padding: 1em 1.5em;
+	min-width: 10em;
+	border: 1px solid $border-color;
+	background: #fff;
+	ol{
+		@extend .custom;
+		counter-reset: item;
+
+		li:before { 
+			content: counters(item, ".") " "; 
+			counter-increment: item; 
+			font-family:$body-font-family;
+		}
+
+		ol{ @include list-margin(2em); }
+	}
+}
+
+// Fixed with and height box 
+.block{ 
+	@include size(10em);
+	background-image:url(https://unsplash.it/300/300?image=537);
+	float: left;
+	margin-right: 1em;
+	*{	@extend .text-white;}
+}
+
+/*--------------------------------------------------------------
+Helpers
+--------------------------------------------------------------*/
+
+// Animate
+.animate_sample:hover{ padding: 2em; }
+
+.animate_sample.custom{ @include transition(padding,1000ms) }
+
+/*--------------------------------------------------------------
+Mixins
+--------------------------------------------------------------*/
+
+// Margin
+.margin_1{ @include margin($t:1em,$b:3em) }
+.margin_2{ @include margin($t:3em,$b:1em,$l:2em) }
+.margin_3{ @include margin($t:3em,$r:3em) }
+
+// Size
+.size_1{ @include size(20em) }
+.size_2{ @include size(10em,20em) }
+.size_3{ @include size(5em,20em) }
+
+// Position
+.pos_1{ @include position(absolute, $b:1em)}
+.pos_2{ @include position(relative, $l:20em)}
+.pos_3{ @include position(absolute, $r:1em, $t: 0)}
+
+// List Margin
+ul.li_margin_1, ul.li_margin_2 { 
+	li:before{ content:"\f0e7 \f0e7 \f0e7"; }
+}
+
+ul.li_margin_2{ @include list-margin(2em); }
+
+// Darken
+div[class^="darken_"],div[class*=" darken_"]{ 
+	color: #fff;
+
+	p{ padding: 1em; }
+}
+
+.darken_1{@include darken}
+.darken_2{@include darken(0.6)}
+.darken_3{@include darken(0.6, $color-primary)}
+.darken_4:hover{@include darken(0.6, $color-primary)}
+
+/*--------------------------------------------------------------
+Grid
+--------------------------------------------------------------*/
+
+.grid div{
+	line-height: 2;
+	border:1px solid $border-color;
+}

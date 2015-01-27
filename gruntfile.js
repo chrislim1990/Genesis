@@ -33,7 +33,7 @@ module.exports = function(grunt) {
 
 		watch: {
 			sass:{
-				files: ['genesis/sass/*.scss','test/pivot/*'],
+				files: ['*.scss','genesis/sass/*.scss','test/pivot/*'],
 				tasks: ['sass','autoprefixer'],
 			},
 			options: {

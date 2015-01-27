@@ -2,25 +2,9 @@
 Helpers
 --------------------------------------------------------------*/
 
-
 // Darken the background for lighter text
 .darken{
-	position:relative;
-
-	&:before{
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0px;
-		content: '';
-		opacity: 0.3;
-		background-color: #222;
-		z-index: 0;
-	}
-	*{
-		z-index: 1;
-		position: relative;
-	}
+@include darken;
 }
 
 // Change the background to cover and align center
@@ -55,6 +39,11 @@ Helpers
 			vertical-align: middle;
 			float: none;
 		}
+		&.bottom{
+			& > div, & > article, & > section, & > figure {
+				vertical-align: bottom;
+			}
+		}
 	}
 }
 
@@ -71,12 +60,27 @@ Helpers
 .pull-left{ float:left; }
 .pull-right{ float:right; }
 
-// Text Left, Right
-.text-left { text-align: left }
-.text-right { text-align: right }
-
 // Clearfix
 .clearfix{
 	@include clearfix();
 }
 
+// Round
+.round{
+	border-radius: 999em;
+}
+
+// Icons
+.icons{
+	i{ 
+		@extend .animate;
+		@include print-styles($icons); 
+
+		&:hover{ @include print-styles($icons-hover); }
+	}
+
+	&.round{
+		border-radius: 0;
+		i{ @extend .round; }
+	}
+}
