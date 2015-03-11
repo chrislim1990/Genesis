@@ -2,7 +2,7 @@
 @import "mixins";
 @import "variables";
 @import "functions";
-@import "../lib/font-awesome-4.2.0/scss/font-awesome.scss";
+@import "../libs/font-awesome-4.2.0/scss/font-awesome.scss";
 @import "base";
 @import "typography";
 @import "forms";
@@ -11,4 +11,7 @@
 @import "responsive-embed";
 @import "buttons";
 @import "nav";
+
+/* Optional */
+@import "focuspoint";
 @import "simple-slider";

@@ -4,48 +4,73 @@
     overflow: hidden;
     position: relative;
     z-index: 1;
+
+    /* Slide Position */
+    &+div{
+        margin: -2.2em 0 1.1em 0;
+        width: 100%;
+        text-align: center;
+        z-index: 2;
+        position: relative;
+
+        ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+
+            li{
+                display: inline-block;
+                @include size(0.6em);
+                text-indent: -999em;
+                border: 2px solid #FFF;
+                border-radius: 999em;
+                margin: 0 0.3em;
+                padding: 0;
+                border-radius: 10em;
+                cursor: pointer;
+
+                &.active{
+                    background: #fff;
+                }
+            }
+        }
+    }
 }
 
 .slide{
-    @include size(100%);
-    padding-bottom: 2em;
-    top: 0;
-    left: 0;
-    float: left;
-    position: absolute;
     @extend .background-cover;
+    @include size(100%);
+    @include position(absolute, $t:0, $l:0);
+    padding-bottom: 2em;
+    float: left;
 }
 
 .slide-content{
     padding: 1em 2em;
 }
 
-#slideposition {
-    margin: -2.2em 0 1.1em 0;
-    width: 100%;
-    text-align: center;
-    z-index: 2;
-    position: relative;
+#slidercontrol {
+    @extend .valign;
+    @include size(100%);
+    z-index: 10;
+    position: absolute;
 
-    ul{
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
+    div{
+        cursor: pointer;
+        font-family: 'lxii';
+        font-size: 1.3em;
+        padding: 0 1em;
+        color: #fff;
 
-        li{
-            display: inline-block;
-            @include size(0.6em);
-            text-indent: -999em;
-            border: 2px solid #FFF;
-            border-radius: 6px;
-            margin: 0 0.3em;
-            padding: 0;
-            border-radius: 10em;
-            cursor: pointer;
+        &.next{ text-align: right }
+    }
+}
 
-            &.active{
-                background: #fff;
-            }
-        }
+.slider-indicator.alt{
+    border: 0;
+    background: #fff;
+    box-shadow: inset 0 0 0.2em 0 rgba(0,0,0,0.4);
+    &.active{
+        background: $color-primary;
     }
 }

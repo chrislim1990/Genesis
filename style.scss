@@ -26,9 +26,12 @@
 	font-size: 0.9em;
 	@include position(fixed,$t:1em,$r:1em);
 	padding: 1em 1.5em;
-	min-width: 10em;
+	width: 15em;
 	border: 1px solid $border-color;
 	background: #fff;
+	&+div{
+		padding-right: 15em;
+	}
 	ol{
 		@extend .custom;
 		counter-reset: item;
@@ -50,6 +53,10 @@
 	float: left;
 	margin-right: 1em;
 	*{	@extend .text-white;}
+}
+
+#fp-slideposition li{
+@extend .slider-indicator.alt;
 }
 
 /*--------------------------------------------------------------

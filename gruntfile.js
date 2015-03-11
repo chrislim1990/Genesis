@@ -20,14 +20,15 @@ module.exports = function(grunt) {
 				},
 				files: {                       
 					'style.css': 'style.scss',
-					'test/pivot/style.css': 'test/pivot/style.scss'
+					'test/pivot/style.css': 'test/pivot/style.scss',
+					'genesis.min.css': 'genesis.scss'
 				}
 			}
 		},
 
 		autoprefixer: {
 			file: {
-				src: ['style.css', 'test/pivot/style.css']
+				src: ['style.css', 'test/pivot/style.css', 'genesis.min.css']
 			},
 		},
 
@@ -43,10 +44,7 @@ module.exports = function(grunt) {
 
 	})
 
-	grunt.registerTask('server',[
-		'express',
-		'watch'
-		])
+	grunt.registerTask('server',['express', 'watch']);
 
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-watch');
