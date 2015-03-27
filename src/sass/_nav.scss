@@ -19,7 +19,7 @@ Dropdown
 ul.menu {
 	margin-bottom: 0;
 	
-	li a, li span{
+	li > a, li > span{
 		cursor: pointer;
 		@include print-styles($menu-btn);
 
@@ -37,13 +37,13 @@ ul.menu {
 			position: relative;
 			border-bottom: none;
 			margin-left: 0;
-			a, span{ @include print-styles($menu-1st-tier-btn); }
+			& > a, & > span{ @include print-styles($menu-1st-tier-btn); }
 		}
 
 		/* Second, Third and more Tiers */
 		ul li {
 			margin-top: 0;
-			a, span{ @include print-styles($menu-2nd-tier-btn);}
+			& > a, & > span{ @include print-styles($menu-2nd-tier-btn);}
 		}
 	}
 

@@ -1,53 +1,34 @@
 module.exports = function(grunt) {
+
+
 	grunt.initConfig({
 
-		express:{
-			all:{
-				options:{
-					port:9000,
-					hostname:"localhost",
-					bases: ['/Users/Chris/Github/genesis/'],
-					livereload: true
-				}
+		pkg: require('./package.json'),
+
+		paths:{
+
+			base: '',
+
+			genesis_sass:{
+				src:'src/sass',
+				dest:'build'
+			},
+
+			cheatsheet_sass:{
+				src:'example/cheatsheet'
+			},
+
+			pivot_sass:{
+				src:'example/pivot'
 			}
-		},
 
-		sass: {                            
-			dist: {                           
-				options: {                       
-					style: 'compressed',
-					sourcemap: 'none'
-				},
-				files: {                       
-					'style.css': 'style.scss',
-					'test/pivot/style.css': 'test/pivot/style.scss',
-					'genesis.min.css': 'genesis.scss'
-				}
-			}
-		},
-
-		autoprefixer: {
-			file: {
-				src: ['style.css', 'test/pivot/style.css', 'genesis.min.css']
-			},
-		},
-
-		watch: {
-			sass:{
-				files: ['*.scss','genesis/sass/*.scss','test/pivot/*'],
-				tasks: ['sass','autoprefixer'],
-			},
-			options: {
-				livereload: true,
-			},
 		}
 
-	})
+	});
 
-	grunt.registerTask('server',['express', 'watch']);
+	/* Load per-task config from separate files. */
+	grunt.loadTasks('grunt');
 
-	grunt.loadNpmTasks('grunt-contrib-sass');
-	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-autoprefixer');
-	grunt.loadNpmTasks('grunt-express');
+	/* Register alias */
+	grunt.registerTask('server',['php', 'watch', 'sass', 'autoprefixer']);
 }

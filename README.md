@@ -2,6 +2,10 @@
 
 Change Lists:
 
+27/3/15
+
+- Split Grunt config into per-task files.
+
 27/1/15
 
 - Moved those optional css to variable.scss.
