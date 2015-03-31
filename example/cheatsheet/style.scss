@@ -1,3 +1,7 @@
+/* alt theme */
+// @import "conf";
+
+/* main */
 @import "../../src/sass/genesis";
 
 // Cheatsheet show case only
@@ -6,15 +10,19 @@
 
 .section{
 	padding: 3em 0;
-	border-bottom: 1px solid $border-color;
+	border-bottom: 1px solid $color-border;
 
 	>div:not(.doc-header){
 		padding-top: 3em;
 
 		&:not(:last-child){
 			padding-bottom: 3em;
-			border-bottom: 1px dashed $border-color;	
+			border-bottom: 1px dashed $color-border;	
 		}
+	}
+
+	&:target{
+		// background: #eee;
 	}
 }
 
@@ -27,7 +35,7 @@
 	@include position(fixed,$t:1em,$r:1em);
 	padding: 1em 1.5em;
 	width: 15em;
-	border: 1px solid $border-color;
+	border: 1px solid $color-border;
 	background: #fff;
 	&+div{
 		padding-right: 15em;
@@ -35,6 +43,10 @@
 	ol{
 		@extend .custom;
 		counter-reset: item;
+
+		li{
+			line-height: 1.4;
+		}
 
 		li:before { 
 			content: counters(item, ".") " "; 
@@ -56,7 +68,7 @@
 }
 
 #fp-slideposition li{
-@extend .slider-indicator.alt;
+	@extend .slider-indicator.alt;
 }
 
 /*--------------------------------------------------------------
@@ -112,5 +124,5 @@ Grid
 
 .grid div{
 	line-height: 2;
-	border:1px solid $border-color;
+	border:1px solid $color-border;
 }

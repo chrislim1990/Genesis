@@ -1,17 +1,25 @@
-@import "normalize";
-@import "mixins";
-@import "variables";
-@import "functions";
-@import "../libs/font-awesome-4.2.0/scss/font-awesome.scss";
-@import "base";
-@import "typography";
-@import "forms";
-@import "grid";
-@import "helpers";
-@import "responsive-embed";
-@import "buttons";
-@import "nav";
+/* variables, mixins and functions */
 
-/* Optional */
+@import 
+"variables",
+"normalize",
+"mixins",
+"functions",
+"../libs/font-awesome-4.2.0/scss/font-awesome.scss";
+
+/* partials */
+
+@import
+"base",
+"typography",
+"forms",
+"grid",
+"helpers",
+"responsive-embed",
+"buttons",
+"nav";
+
+/* third-party related */
+
 @import "focuspoint";
 @import "simple-slider";

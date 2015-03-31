@@ -21,7 +21,7 @@ ul.menu {
 	
 	li > a, li > span{
 		cursor: pointer;
-		@include print-styles($menu-btn);
+		@include print($menu-btn);
 
 		&:after { content: ' »'; } 
 		&:only-child:after { content: ''; }  
@@ -37,13 +37,13 @@ ul.menu {
 			position: relative;
 			border-bottom: none;
 			margin-left: 0;
-			& > a, & > span{ @include print-styles($menu-1st-tier-btn); }
+			& > a, & > span{ @include print($menu-1st-tier-btn); }
 		}
 
 		/* Second, Third and more Tiers */
 		ul li {
 			margin-top: 0;
-			& > a, & > span{ @include print-styles($menu-2nd-tier-btn);}
+			& > a, & > span{ @include print($menu-2nd-tier-btn);}
 		}
 	}
 
@@ -93,7 +93,7 @@ Mobile
 				display: block; 
 				width: 100%; 
 				text-decoration: none;
-				@include print-styles($menu-1st-tier-btn); 
+				@include print($menu-1st-tier-btn); 
 			}
 		}
 	}
@@ -109,6 +109,7 @@ Mobile
 			content: attr(data-open);
 		}
 	}
+	
 	#toggle:checked + div{ 
 		.menu { 
 			display: block; 

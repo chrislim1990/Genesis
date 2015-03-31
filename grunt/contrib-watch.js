@@ -15,7 +15,12 @@ module.exports = function(grunt) {
       files: [
       '*.php',
       '<%= paths.genesis_sass.dest %>/*.css',
+      
+      /* cheatsheet */
+      '<%= paths.cheatsheet_sass.src %>/*.php',
       '<%= paths.cheatsheet_sass.src %>/*.css',
+
+      /* pivot */
       '<%= paths.pivot_sass.src %>/*.css'
       ],
 

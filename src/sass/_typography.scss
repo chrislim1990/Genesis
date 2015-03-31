@@ -10,28 +10,21 @@ body{
 	font-size: $base-font-size;
 	font-family: $body-font-family;
 	line-height: $line-height;
-	color: $body-color;
+	color: $color-text;
 	-webkit-font-smoothing: antialiased;
 }
 
 a {
-	@include print-styles($link);
+	@include print($link);
 
-	&:hover, &:focus {
-		@include print-styles($link-hover);
-	}
-	img{
-		vertical-align: middle;
-	}
+	&:hover, &:focus { @include print($link-hover); }
+	
+	img{ vertical-align: middle; }
 }
 
-%headings-style{
-	@include print-styles($heading);
-}
+%headings-style{ @include print($heading); }
 
-%alt-headings-style{
-	@include print-styles($alt-heading);
-}
+%alt-headings-style{ @include print($heading-alt); }
 
 @mixin headings($from: 1, $to: 6){
 	@for $i from $from through $to{
@@ -47,9 +40,8 @@ a {
 
 @include headings();
 
-p{
-	margin: 0 0 1em;
-}
+p{ margin: 0 0 1em; }
+
 .lead{
 	font-size: 1.5em;
 	font-weight: 300;
@@ -60,11 +52,11 @@ p{
 ul, ol, {
 	margin: 0;
 	padding: 0;
-	line-height: 1.6;
 	margin-left: 1.2em;
 	margin-bottom: 1.2em;
 	list-style-position: outside;
 	font-family: inherit;
+	
 	li{
 		ul, ol{
 			margin-bottom: 0;			
@@ -85,8 +77,8 @@ ul, ol, {
 }
 
 code {
-	background-color: lighten($border-color,10);
-	border: 1px solid $border-color;
+	background-color: lighten($color-border,20);
+	border: 1px solid $color-border;
 	margin: 0;
 	font-family: "Consolas", "Menlo", "Courier", monospace;
 	padding: 0.15em 0.35em 0;
@@ -95,23 +87,11 @@ code {
 }
 
 // Text Left, Right & Center
-.text-left{
-	text-align: left;
-}
-.text-right{
-	text-align: right;
-}
-.text-center{
-	text-align: center;
-}
-.text-justify{
-	text-align: justify;
-}
+.text-left{ text-align: left; }
+.text-right{ text-align: right; }
+.text-center{ text-align: center; }
+.text-justify{ text-align: justify; }
 
 // Text Color
-.text-primary{
-	color: $color-primary;
-}
-.text-secondary{
-	color: $color-secondary;
-}
+.text-primary{ color: $color-primary; }
+.text-secondary{ color: $color-secondary; }

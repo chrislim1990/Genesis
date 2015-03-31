@@ -5,8 +5,15 @@
 }
 
 // Echo all the variables in the map
-@mixin print-styles($map){
- @each $property, $value in $map {
-   #{$property}: $value;
- }
-}
+@mixin print($map){
+
+	@each $property, $value in $map {
+
+		@if $property == 'extend'{
+			@extend %#{$value};
+			
+			} @else{ #{$property}: $value; }
+
+		}
+
+	}

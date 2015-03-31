@@ -27,7 +27,7 @@ input[type="password"],
 input[type="email"],
 textarea,
 select {
-	border: 1px solid $border-color;
+	border: 1px solid $color-border;
 	padding: 0.45em 0.35em;
 	outline: none;
 	border-radius: $global-radius;
@@ -38,8 +38,8 @@ select {
 	background: #fff;
 
 	&:focus{
-		border-color: darken($border-color,10);
-		color: lighten($body-color,20);
+		border-color: darken($color-border,10);
+		color: lighten($color-text,20);
 		box-shadow:  0 0 3px rgba(0,0,0,.2); 
 	} 
 

@@ -1,27 +1,25 @@
 /*--------------------------------------------------------------
-Buttons
+buttons
 --------------------------------------------------------------*/
 
 .btn {
 	display: inline-block;
 	text-align: center;
+	text-decoration: none;
 	vertical-align: middle;
 	cursor: pointer;
 	background-image: none;
 	white-space: nowrap;
 	margin: 0;
-	
-	@include print-styles($button);
+
+	@include print($button);
 
 	&:hover, &:focus {
 		text-decoration: none;
-		@include print-styles($button-hover);
+		@include print($button-hover);
 	}
 
-	&:active, &.active {
-		outline: 0;
-		background-image: none;
-	}
+	&:active, &.active { outline: 0; }
 
 	&.disabled, &[disabled], fieldset[disabled] & {
 		cursor: not-allowed;
@@ -30,12 +28,10 @@ Buttons
 	}
 
 	&.alt{
-		@include print-styles($alt-button);
+		@include print($button-alt);
 
-		&:hover,&:focus{ @include print-styles($alt-button-hover); }
+		&:hover,&:focus{ @include print($button-alt-hover); }
 	}
 
-	&.lg{
-		@include print-styles($button-lg);
-	}
+	&.lg{ @include print($button-lg); }
 }

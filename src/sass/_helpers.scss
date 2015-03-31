@@ -1,19 +1,24 @@
 /*--------------------------------------------------------------
-Helpers
+darken background
 --------------------------------------------------------------*/
 
-// Darken the background for lighter text
 .darken{
-@include darken;
+	@include darken;
 }
 
-// Change the background to cover and align center
+/*--------------------------------------------------------------
+background cover
+--------------------------------------------------------------*/
+
 .background-cover{
 	background: no-repeat center center;
 	background-size:cover;
 }
 
-// Inline List
+/*--------------------------------------------------------------
+inline list
+--------------------------------------------------------------*/
+
 .inline-list {
 	margin-left: -1.2em;
 	overflow: hidden;
@@ -30,7 +35,10 @@ Helpers
 	}
 }
 
-// Vertical Align
+/*--------------------------------------------------------------
+vertical align
+--------------------------------------------------------------*/
+
 .valign {
 	@include above(sm){
 		display: table;
@@ -47,40 +55,60 @@ Helpers
 	}
 }
 
-// Animate
-@mixin transition($property:all, $time:200ms) {
-	transition: $property $time ease;
-}
+/*--------------------------------------------------------------
+animate
+--------------------------------------------------------------*/
 
-.animate{
-	@include transition;
-}
+.animate{ @include transition; }
 
-// Pull Left, Right
+/*--------------------------------------------------------------
+float left, right
+--------------------------------------------------------------*/
+
 .pull-left{ float:left; }
 .pull-right{ float:right; }
 
-// Clearfix
+/*--------------------------------------------------------------
+clearfix
+--------------------------------------------------------------*/
+
 .clearfix{
-	@include clearfix();
+	&:before, &:after {
+		content: " ";
+		display: table;
+	}
+	&:after { clear: both; }
 }
 
-// Round
-.round{
-	border-radius: 999em;
-}
+/*--------------------------------------------------------------
+round
+--------------------------------------------------------------*/
 
-// Icons
+.round{ border-radius: 999em; }
+
+/*--------------------------------------------------------------
+icons
+--------------------------------------------------------------*/
+
 .icons{
 	i{ 
 		@extend .animate;
-		@include print-styles($icons); 
+		@include print($icons); 
 
-		&:hover{ @include print-styles($icons-hover); }
+		&:hover{ @include print($icons-hover); }
 	}
 
 	&.round{
 		border-radius: 0;
 		i{ @extend .round; }
 	}
+}
+
+/*--------------------------------------------------------------
+reset
+--------------------------------------------------------------*/
+
+%reset{
+	padding: 0;
+	margin: 0;
 }

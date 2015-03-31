@@ -1,26 +1,29 @@
 /*--------------------------------------------------------------
-Global
+global
 --------------------------------------------------------------*/
 
-$base-font-size: 15px;
-$global-radius: 0.3em;
-$global-padding: 1em;
+$base-font-size: 15px!default;
+$global-radius : 0.3em!default;
+$global-padding: 1em!default;
 
 /*--------------------------------------------------------------
-Colors
+colors
 --------------------------------------------------------------*/
 
-$color-primary: #33C3F0;
-$color-secondary: #fff;
-$color-white: #fff;
+$color-primary   : #33C3F0!default;
+$color-secondary : #eee!default;
+$color-white     : #fff!default;
 
-$link-color: $color-primary;
-$border-color: #ddd;
+$color-link      : $color-primary!default;
+$color-link-light: lighten($color-link,10)!default;
+$color-link-dark : darken($color-link,10)!default;
 
-$body-color: #444;
+$color-border    : rgba(0,0,0,0.15)!default;
+
+$color-text      : #555!default;
 
 /*--------------------------------------------------------------
-Grid
+grid
 --------------------------------------------------------------*/
 
 $screen-sizes: (
@@ -28,19 +31,19 @@ $screen-sizes: (
 	sm : 768px,
 	md : 992px,
 	lg : 1200px
-	);
+	)!default;
 
-$grid-columns: 12;
+$grid-columns: 12!default;
 
-$grid-gutter-width: 30px;
+$grid-gutter-width: 30px!default;
 
 
 /*--------------------------------------------------------------
-Typography
+typography
 --------------------------------------------------------------*/
 
-$body-font-family: sans-serif;
-$line-height: 1.4;
+$body-font-family: sans-serif!default;
+$line-height: 1.4!default;
 
 $headings-size: (
 	h1 : 2.6em,
@@ -49,109 +52,113 @@ $headings-size: (
 	h4 : 1.3em,
 	h5 : 1.0em,
 	h6 : 0.9em,
-	);
+	)!default;
 
 $heading: (
-	font-family: sans-serif,
+	margin-top: 0.5em,
+	margin-bottom: 1em,
 	font-weight: normal,
-	color: $body-color,
-	margin-top: 0.2em,
-	margin-bottom: 0.5em,
-	);
+	)!default;
 
-$alt-heading: (
+$heading-alt: (
 	font-family: serif,
-	);
+	)!default;
 
 $link:(
 	text-decoration: none,
-	color: $link-color,
-	);
+	color: $color-link,
+	)!default;
 
 $link-hover:(
 	text-decoration: underline,
-	color: darken($link-color,10),
-	);
+	color: $color-link-dark,
+	)!default;
 
 /*--------------------------------------------------------------
-Buttons
+theme
+--------------------------------------------------------------*/
+
+%theme{
+	border: 1px solid $color-border;
+	background: $color-primary;
+	color:$color-white;
+	
+	&:hover{
+		background: $color-secondary;
+		color: initial;
+	}
+}
+
+%theme-alt{
+	border: 1px solid $color-border;
+	background: $color-secondary;
+	color:initial;
+	
+	&:hover{
+		background: $color-primary;
+		color: $color-white;
+	}
+}
+
+/*--------------------------------------------------------------
+buttons
 --------------------------------------------------------------*/
 
 $button: (
+	extend: theme,
 	font-size: 0.9em,
-
-	color: $color-white,
-	border: 1px solid $color-primary,
-	background: $color-primary,
-
 	border-radius: $global-radius,
 	padding: $global-padding/2 $global-padding,
-	);
+	)!default;
 
 $button-hover: (
-	color: $color-white,
-	border-color: darken($color-primary,10),
-	background: darken($color-primary,10),
-	);
+	)!default;
 
 $button-lg:(
-	padding: $global-padding $global-padding*2,
-	font-size: 1em,
-	);
+	font-size: 1.3em,
+	)!default;
 
-$alt-button: (
-	color: $body-color,
-	border-color: $border-color,
-	background: $color-secondary,
-	);
+$button-alt: (
+	extend: theme-alt,
+	)!default;
 
-$alt-button-hover: (
-	border-color: darken($border-color,20),
-	);
+$button-alt-hover: (
+	)!default;
 
 /*--------------------------------------------------------------
-Slider
+menu
 --------------------------------------------------------------*/
 
-$slider-height: 25em;
-
-/*--------------------------------------------------------------
-Menu
---------------------------------------------------------------*/
-
-$menu-item-height: 2.5em;
-$menu-child-width: 10em;
+$menu-item-height: 2.5em!default;
+$menu-child-width: 10em!default;
 
 $menu-btn:(
-	background: $color-primary,
-	color: $color-white,
+	extend: theme,
 	border-radius: 999em,
 	line-height: $menu-item-height,
 	padding: 0 2em,
-	);
+	)!default;
 
 $menu-1st-tier-btn:(
-	color: $body-color,
 	border-radius: 0,
-	background: $border-color,
-	);
+	)!default;
 
 $menu-2nd-tier-btn:(
-
-	);
+	)!default;
 
 /*--------------------------------------------------------------
-Icons
+icons
 --------------------------------------------------------------*/
 $icons:(
-	color: $color-white,
-	background: $color-primary,
-	border: 1px solid $color-primary,
+	extend: theme,
 	padding: 1em,
-	);
+	)!default;
 
 $icons-hover:(
-	color: $body-color,
-	background: $color-secondary,
-	border-color: $border-color,
-	);
+	)!default;
+
+/*--------------------------------------------------------------
+slider
+--------------------------------------------------------------*/
+
+$slider-height: 25em!default;

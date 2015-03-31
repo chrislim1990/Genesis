@@ -12,10 +12,13 @@ Fixes
 General
 --------------------------------------------------------------*/
 
-img {  max-width: 100%;  }
+img {  
+	max-width: 100%;
+	height: auto;
+}
 
 hr{
-	border: solid $border-color;
+	border: solid $color-border;
 	border-width: 1px 0 0;
 	clear: both;
 	margin: 1.2em 0;
