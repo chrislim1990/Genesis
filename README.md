@@ -2,6 +2,10 @@
 
 Change Lists:
 
+31/3/15
+
+- Restructure variable.scss
+
 27/3/15
 
 - Split Grunt config into per-task files.
