@@ -1,9 +1,18 @@
 # Genesis
 
-Change Lists:
+### Installation
 
-14/5/15
+Install via bower
 
+	bower install genesis
+
+
+### Change Lists
+
+18/5/15
+
+- Swap configuration variables to sass array
+- Archive rarely use modules
 - Added Grunt-copy: resaveScss. It resave Scss from bower_components for import purpose. dest is sass:vendors 
 
 31/3/15
