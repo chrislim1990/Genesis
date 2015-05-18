@@ -6,7 +6,6 @@ module.exports = function(grunt) {
 			src: [
 			'<%= paths.genesis_sass.dest %>/*.css',
 			'<%= paths.cheatsheet_sass.dest %>/*.css',
-			'<%= paths.pivot_sass.dest %>/*.css'
 			]
 		}
 

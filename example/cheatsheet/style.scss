@@ -1,60 +1,79 @@
 /* alt theme */
-// @import "conf";
+// @import "theme";
+
+/*--------------------------------------------------------------
+conf
+--------------------------------------------------------------*/
+$susy: (
+	gutters: 1/2,
+	);
 
 /* main */
-@import "../../src/sass/genesis";
+@import "../../src/conf";
 
-// Cheatsheet show case only
+/*--------------------------------------------------------------
+susy
+--------------------------------------------------------------*/
 
-.text-white{ color:$color-white };
-
-.section{
-	padding: 3em 0;
-	border-bottom: 1px solid $color-border;
-
-	>div:not(.doc-header){
-		padding-top: 3em;
-
-		&:not(:last-child){
-			padding-bottom: 3em;
-			border-bottom: 1px dashed $color-border;	
-		}
+#main{
+	@include container;
+	
+	.doc-header{ @include span(12); }
+	
+	.half{ 
+		@include span(6);
+		position:relative;
 	}
-
-	&:target{
-		// background: #eee;
+	
+	.half-nested{ 
+		@include span(6 nest);
+		.third{ @include span(2 of 6); }
+		.half{ @include span(3 of 6); }
+		.full{ @include span(6 of 6); }
 	}
+	
+	.fourth{ @include span(3); }
 }
 
-.doc-header{
-	padding-bottom: 3em;
+/*--------------------------------------------------------------
+Cheatsheet show case only
+--------------------------------------------------------------*/
+section{
+	@include border(bottom, $style:dashed);
+	overflow: auto;
+	padding: 2*gutter() 0;
+
+	.doc-header{ padding-bottom: 2*gutter(); }
+
+	.doc>div{
+		@include border(top, $style:dashed);
+		padding-bottom: 2*gutter();
+	}
+
+// &:target{ background: rgba(0,0,0,0.02); }
 }
 
 .toc{
-	font-size: 0.9em;
+	@extend %border;
 	@include position(fixed,$t:1em,$r:1em);
+	font-size: 0.9em;
 	padding: 1em 1.5em;
 	width: 15em;
-	border: 1px solid $color-border;
 	background: #fff;
-	&+div{
-		padding-right: 15em;
-	}
+	z-index: 1;
+	// &+div{ padding-right: 15em; }
+	h4{margin-top: 0;}
 	ol{
-		@extend .custom;
 		counter-reset: item;
-
-		li{
-			line-height: 1.4;
-		}
-
-		li:before { 
-			content: counters(item, ".") " "; 
-			counter-increment: item; 
-			font-family:$body-font-family;
-		}
+		list-style-type: none;
 
 		ol{ @include list-margin(2em); }
+
+		li:before, ol li:before { 
+			content: counters(item, ".") " "; 
+			counter-increment: item; 
+			font-family: map-get($typography, font);
+		}
 	}
 }
 
@@ -64,11 +83,8 @@
 	background-image:url(https://unsplash.it/300/300?image=537);
 	float: left;
 	margin-right: 1em;
+	p{ margin: 1em; }
 	*{	@extend .text-white;}
-}
-
-#fp-slideposition li{
-	@extend .slider-indicator.alt;
 }
 
 /*--------------------------------------------------------------
@@ -86,7 +102,10 @@ Mixins
 
 // Margin
 .margin_1{ @include margin($t:1em,$b:3em) }
-.margin_2{ @include margin($t:3em,$b:1em,$l:2em) }
+.margin_2{ 
+	@include margin($t:3em,$b:1em,$l:2em) ;
+	@include padding($b:10em);
+}
 .margin_3{ @include margin($t:3em,$r:3em) }
 
 // Size
@@ -100,29 +119,20 @@ Mixins
 .pos_3{ @include position(absolute, $r:1em, $t: 0)}
 
 // List Margin
-ul.li_margin_1, ul.li_margin_2 { 
-	li:before{ content:"\f0e7 \f0e7 \f0e7"; }
-}
-
 ul.li_margin_2{ @include list-margin(2em); }
 
-// Darken
-div[class^="darken_"],div[class*=" darken_"]{ 
-	color: #fff;
-
-	p{ padding: 1em; }
+ul.li_margin_1, ul.li_margin_2 { 
+	list-style-type: none;
+	li:before{ 
+		content:"abc";
+		font-weight: bold;
+	}
 }
+
+
+// Darken
 
 .darken_1{@include darken}
-.darken_2{@include darken(0.6)}
-.darken_3{@include darken(0.6, $color-primary)}
-.darken_4:hover{@include darken(0.6, $color-primary)}
+.darken_3{@include darken(0.6, color(primary))}
+.darken_4:hover{@include darken(0.6, color(primary))}
 
-/*--------------------------------------------------------------
-Grid
---------------------------------------------------------------*/
-
-.grid div{
-	line-height: 2;
-	border:1px solid $color-border;
-}

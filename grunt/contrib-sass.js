@@ -7,13 +7,10 @@ module.exports = function(grunt) {
 
 			files: {                       
 				/* genesis */
-				'<%= paths.genesis_sass.dest %>/genesis.min.css': '<%= paths.genesis_sass.src %>/genesis.scss',
+				'<%= paths.genesis_sass.dest %>/genesis.min.css': '<%= paths.genesis_sass.src %>/conf.scss',
 				
 				/* cheatsheet */
-				'<%= paths.cheatsheet_sass.src %>/style.css': '<%= paths.cheatsheet_sass.src %>/style.scss',
-				
-				/* pivot */
-				'<%= paths.pivot_sass.src %>/style.css': '<%= paths.pivot_sass.src %>/style.scss'
+				'<%= paths.cheatsheet_sass.src %>/style.css': '<%= paths.cheatsheet_sass.src %>/style.scss'
 			}
 		}
 

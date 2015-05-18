@@ -1,14 +1,14 @@
 {
-	"name" : "Genesis",
-	"version" : "0.1.0",
-	"author" : "LX2",
-	"private" : true,
-
-	"devDependencies" : {
-		"grunt"              : "~0.4.5",
-		"grunt-contrib-sass" : "*",
-		"grunt-contrib-watch": "*",
-		"grunt-autoprefixer" : "~1.0.1",
-		"grunt-php"          : "~1.4.0"
-	}
+  "name": "Genesis",
+  "version": "0.1.0",
+  "author": "LX2",
+  "private": true,
+  "devDependencies": {
+    "grunt": "*",
+    "grunt-autoprefixer": "*",
+    "grunt-contrib-copy": "^0.8.0",
+    "grunt-contrib-sass": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-php": "*"
+  }
 }

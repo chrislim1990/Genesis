@@ -10,17 +10,13 @@ module.exports = function(grunt) {
 			base: '',
 
 			genesis_sass:{
-				src:'src/sass',
-				dest:'build'
+				src:'src',
+				dest:'dist'
 			},
 
 			cheatsheet_sass:{
 				src:'example/cheatsheet'
-			},
-
-			pivot_sass:{
-				src:'example/pivot'
-			}
+		}
 
 		}
 
@@ -30,5 +26,5 @@ module.exports = function(grunt) {
 	grunt.loadTasks('grunt');
 
 	/* Register alias */
-	grunt.registerTask('server',['php', 'watch', 'sass', 'autoprefixer']);
+	grunt.registerTask('default',['php', 'watch', 'sass', 'autoprefixer']);
 }

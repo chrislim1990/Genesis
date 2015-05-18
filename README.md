@@ -2,6 +2,10 @@
 
 Change Lists:
 
+14/5/15
+
+- Added Grunt-copy: resaveScss. It resave Scss from bower_components for import purpose. dest is sass:vendors 
+
 31/3/15
 
 - Restructure variable.scss

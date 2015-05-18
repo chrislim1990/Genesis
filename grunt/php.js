@@ -3,7 +3,7 @@ module.exports = function(grunt) {
   grunt.config('php', {
 
     watch: {
-      options: { open: true }
+      options: { open: 'example/cheatsheet/index.php' }
     }
     
   });

@@ -5,7 +5,7 @@
 
 		var newLine, section, title;
 
-		$(".row.section").each(function() {
+		$("section").each(function() {
 
 			section = $(this);
 			title = section.attr("id");
