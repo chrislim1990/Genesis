@@ -1,0 +1,121 @@
+/*--------------------------------------------------------------
+Nav
+--------------------------------------------------------------*/
+
+.nav { 
+	position: relative;
+	z-index: 10;
+}
+
+#toggle, .toggle { display: none; }
+
+/*--------------------------------------------------------------
+Dropdown
+--------------------------------------------------------------*/
+
+ul.menu {
+	margin-bottom: 0;
+	
+	li > a, li > span{
+		cursor: pointer;
+		@include print($menu-btn);
+
+		&:after { content: ' »'; } 
+		&:only-child:after { content: ''; }  
+	}
+
+	/* Hide Dropdowns by Default */
+	ul {
+		display: none;
+
+		/* Fisrt Tier Dropdown */
+		li {
+			float: none;
+			position: relative;
+			border-bottom: none;
+			margin-left: 0;
+			& > a, & > span{ @include print($menu-1st-tier-btn); }
+		}
+
+		/* Second, Third and more Tiers */
+		ul li {
+			margin-top: 0;
+			& > a, & > span{ @include print($menu-2nd-tier-btn);}
+		}
+	}
+
+	/* Display Dropdowns on Hover */
+	li:hover > ul {
+		display:list-item;
+		list-style: none;
+		margin-left: 0;
+	}
+}
+
+@include above(sm){
+	ul.menu{
+		ul {
+			position: absolute;
+			li{
+				width: $menu-child-width;
+			}
+			ul li{
+				left: $menu-child-width;
+				top: -$menu-item-height;
+			}
+		}
+	}
+}
+
+/*--------------------------------------------------------------
+Mobile
+--------------------------------------------------------------*/
+
+@include below(sm){
+
+	ul.menu { 
+		display: none; 
+		opacity: 0;
+		z-index: 10;
+		width: 100%; 
+		position: absolute; 
+		right: 0;
+
+		& > li { 
+			display: block; 
+			width: 100%; 
+			margin: 0;
+
+			& > a, & > span { 
+				display: block; 
+				width: 100%; 
+				text-decoration: none;
+				@include print($menu-1st-tier-btn); 
+			}
+		}
+	}
+
+	.toggle { 
+		display: block; 
+		position: relative; 
+		cursor: pointer; 
+		-webkit-touch-callout: none; 
+		-webkit-user-select: none; 
+		user-select: none; 
+		&:after {
+			content: attr(data-open);
+		}
+	}
+	
+	#toggle:checked + div{ 
+		.menu { 
+			display: block; 
+			opacity: 1;
+		}
+		.toggle:after{
+			content: attr(data-close);
+		}
+	}
+	
+}
+

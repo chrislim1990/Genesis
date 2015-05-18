@@ -1,0 +1,37 @@
+/*--------------------------------------------------------------
+buttons
+--------------------------------------------------------------*/
+.btn {
+	display: inline-block;
+	text-align: center;
+	text-decoration: none;
+	vertical-align: middle;
+	cursor: pointer;
+	background-image: none;
+	white-space: nowrap;
+	margin: 0;
+
+	@include deep-print($buttons, default, normal);
+
+	&:hover, &:focus {
+		text-decoration: none;
+		@include deep-print($buttons, default, hover);
+	}
+
+	&:active, &.active { outline: 0; }
+
+	&.disabled, &[disabled], fieldset[disabled] & {
+		cursor: not-allowed;
+		pointer-events: none;
+		box-shadow: none;
+	}
+
+	&.alt{
+		@include deep-print($buttons, alt, normal);
+
+		&:hover,
+		&:focus{ 
+			@include deep-print($buttons, alt, hover);
+		}
+	}
+}

@@ -1,0 +1,9 @@
+/*--------------------------------------------------------------
+font awesome
+--------------------------------------------------------------*/
+@mixin fa-fixes{
+	.fa-2x { vertical-align: -20%; }
+	.fa-3x { vertical-align: -25%; }
+	.fa-4x { vertical-align: -25%; }
+	.fa-5x { vertical-align: -25%; }
+}
