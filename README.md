@@ -9,6 +9,12 @@ Install via bower
 
 ### Change Lists
 
+17/6/15
+
+- Make extend alt heading optional
+- Add Usage and Susy in the documentation
+- Add common.scss and refined the workflow.
+
 18/5/15
 
 - Swap configuration variables to sass array

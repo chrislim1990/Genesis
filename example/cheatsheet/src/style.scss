@@ -4,12 +4,14 @@
 /*--------------------------------------------------------------
 conf
 --------------------------------------------------------------*/
-$susy: (
-	gutters: 1/2,
-	);
 
-/* main */
-@import "../../src/conf";
+@import "../../../src/utilities";
+
+$susy: ( gutters: 1/2, );
+
+@import 
+"../../../src/conf",
+"../../../src/common";
 
 /*--------------------------------------------------------------
 susy
@@ -45,10 +47,7 @@ section{
 
 	.doc-header{ padding-bottom: 2*gutter(); }
 
-	.doc>div{
-		@include border(top, $style:dashed);
-		padding-bottom: 2*gutter();
-	}
+	.doc>div{ padding-bottom: 4*gutter(); }
 
 // &:target{ background: rgba(0,0,0,0.02); }
 }

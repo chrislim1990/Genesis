@@ -87,5 +87,11 @@
 			<h4>Reset</h4>
 			<p>Reset margin and padding to 0. usage: <code>@extend %reset;</code></p>
 		</div>
+
+		<div class="half">
+			<h4>Border Placeholder</h4>
+<p>Ranging from <code>%border</code> until <code>%border-bottom</code>, it will add 1px solid border color border in the direction you specify.</p>
+		</div>
+
 	</div>
 </section>

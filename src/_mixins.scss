@@ -13,26 +13,6 @@ media queries
 }
 
 /*--------------------------------------------------------------
-make heading tags and class
---------------------------------------------------------------*/
-
-@mixin make-headings(){
-
-	%h-default	{ @include deep-print($typography, headings, default); }	
-	%h-alt		{ @include deep-print($typography, headings, alt); }
-
-	$h-sizes: map-deep-get($typography, headings, sizes);
-
-	@each $heading, $size in $h-sizes{
-		#{$heading}, .#{$heading} {
-			@extend %h-default;
-			font-size: $size+ 0em;
-			&.alt{ @extend %h-alt; }
-		}
-	}
-}
-
-/*--------------------------------------------------------------
 size: shorthand for height and width
 --------------------------------------------------------------*/
 

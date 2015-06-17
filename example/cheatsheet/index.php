@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Genesis MK II</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="asset/style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
 	<script src='http://localhost:7000/livereload.js'></script>
@@ -21,6 +21,8 @@
 		<?php 
 
 		$partials = array(
+			"usage",
+			"susy",
 			"typography",
 			"form",
 			"helpers",

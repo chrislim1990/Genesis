@@ -4,6 +4,7 @@ base
 body{
 	font-size: $base-font-size;
 	font-family: map-get($typography, font);
+	font-weight: map-get($typography, font-weight);
 	line-height: map-get($typography, line-height);
 	color: color(text);
 	-webkit-font-smoothing: antialiased;
@@ -16,8 +17,7 @@ a {
 
 	@include deep-print($typography, link, normal);
 
-	&:hover, 
-	&:focus { 
+	&:hover, &:focus {
 		@include deep-print($typography, link, hover);
 	}
 	
@@ -27,6 +27,22 @@ a {
 /*--------------------------------------------------------------
 heading
 --------------------------------------------------------------*/
+
+@mixin make-headings(){
+
+	%h-default	{ @include deep-print($typography, headings, default); }	
+	%h-alt		{ @include deep-print($typography, headings, alt); }
+
+	$h-sizes: map-get($typography, sizes);
+
+	@each $heading, $size in $h-sizes{
+		#{$heading},.#{$heading} {
+			@extend %h-default;
+			font-size: $size+ 0em;
+			&.alt{ @extend %h-alt!optional; }
+		}
+	}
+}
 
 @include make-headings();
 

@@ -14,9 +14,12 @@ module.exports = function(grunt) {
 				dest:'dist'
 			},
 
+			cheatsheet_base: 'example/cheatsheet',
+
 			cheatsheet_sass:{
-				src:'example/cheatsheet'
-		}
+				src:'<%= paths.cheatsheet_base %>/src',
+				dest:'<%= paths.cheatsheet_base %>/asset'
+			}
 
 		}
 
