@@ -7,7 +7,19 @@ Install via bower
 	bower install genesis
 
 
+### Usage
+
+1. Import `utilities.scss` in sass
+2. Write your own configurations
+3. Import `conf.scss` (only configuration file) or `common.scss` (bundle of common module)
+4. If you imported `conf.scss` only in step 3, import desired sass files here.
+
 ### Change Lists
+
+20/6/15
+
+- Simplify bower workflow
+
 
 17/6/15
 

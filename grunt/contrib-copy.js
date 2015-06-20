@@ -2,6 +2,7 @@ module.exports = function(grunt) {
 
 	grunt.config('copy', {
 
+		/* Resave css from bower_components into scss */
 		resaveScss: {
 			expand: true,
 			flatten: true,
@@ -13,6 +14,7 @@ module.exports = function(grunt) {
 			}
 		},
 
+		/* Copy all scss to dist */
 		dist: {
 			files: [
 			{ expand: true, flatten: true, src: ['src/*'], dest: 'dist/', filter: 'isFile', },
@@ -20,6 +22,7 @@ module.exports = function(grunt) {
 			]
 		},
 
+		/* Update the path in utilities */
 		updatePath: {
 			src: 'dist/utilities.scss',
 			dest: 'dist/utilities.scss',

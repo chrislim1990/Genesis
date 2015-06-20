@@ -5,10 +5,7 @@ module.exports = function(grunt) {
 		dist: {                           
 			options: { style: 'compressed'},
 
-			files: {                       
-				/* genesis */
-				'<%= paths.genesis_sass.dest %>/genesis.min.css': '<%= paths.genesis_sass.src %>/dist.scss',
-				
+			files: {                       				
 				/* cheatsheet */
 				'<%= paths.cheatsheet_sass.dest %>/style.css': '<%= paths.cheatsheet_sass.src %>/style.scss'
 			}
