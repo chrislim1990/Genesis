@@ -1,17 +1,19 @@
 {
   "name": "genesis",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "https://github.com/chrislim1990/genesis",
   "authors": [
-    "chrislim1990 <tlyon_90@hotmail.com>"
+  "chrislim1990 <tlyon_90@hotmail.com>"
   ],
   "license": "MIT",
   "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
+  "**/.*",
+  "bower_components",
+  "grunt",
+  "node_modules",
+  "*.json",
+  "*.js",
+  "src"
   ],
   "dependencies": {
     "normalize.css": "~3.0.3",
