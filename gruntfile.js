@@ -28,6 +28,9 @@ module.exports = function(grunt) {
 	/* Load per-task config from separate files. */
 	grunt.loadTasks('grunt');
 
-	/* Register alias */
+	/* default */
 	grunt.registerTask('default',['php', 'watch', 'sass', 'autoprefixer']);
+
+	/* distribution */
+	grunt.registerTask('dist',['sass', 'autoprefixer', 'copy:dist', 'copy:updatePath']);
 }
