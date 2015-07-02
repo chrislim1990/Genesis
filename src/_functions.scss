@@ -1,13 +1,4 @@
 /*--------------------------------------------------------------
-convert to em
---------------------------------------------------------------*/
-
-@function em($target, $context: $base-font-size) {
-	@if $target == 0 { @return 0 }
-	@return $target / $context + 0em;
-}
-
-/*--------------------------------------------------------------
 return color value from colors array
 --------------------------------------------------------------*/
 
@@ -41,6 +32,18 @@ return color value from colors array
 }
 
 /*--------------------------------------------------------------
+return screen size in px
+--------------------------------------------------------------*/
+
+@function screen($screen-size){
+	@if map-has-key($screen-sizes, $screen-size) {
+		@return nth(map-get($screen-sizes, $screen-size),1);
+	}
+	@warn "Unkown '#{$screen-size}' in $screen-sizes.";
+	@return null;
+}
+
+/*--------------------------------------------------------------
 get value from nested array
 --------------------------------------------------------------*/
 
@@ -50,3 +53,31 @@ get value from nested array
 	}
 	@return $map;
 }
+
+/*--------------------------------------------------------------
+jQuery-style extend function
+--------------------------------------------------------------*/
+@function map-extend($map, $maps.../*, $deep */) {
+	$last: nth($maps, -1);
+	$deep: $last == true;
+	$max: if($deep, length($maps) - 1, length($maps));
+
+	@for $i from 1 through $max {
+		$current: nth($maps, $i);
+
+		@if not $deep {
+			$map: map-merge($map, $current);
+			} @else {
+				@each $key, $value in $current {
+
+					@if type-of($value) == "map" and type-of(map-get($map, $key)) == "map" {
+						$value: map-extend(map-get($map, $key), $value, true);
+					}
+
+					$map: map-merge($map, ($key: $value));
+				}
+			}
+		}
+
+		@return $map;
+	}

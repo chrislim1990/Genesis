@@ -10,7 +10,7 @@
 			<h4>Basic</h4>
 			<ol>
 				<li>Use <code>@include container</code> to make container</li>
-				<li>Use <code>gutter()</code> for margin or padding, for consitency sake.</li>
+				<li>Use <code>gutter()</code> for margin or padding if possible, for consitency sake.</li>
 				<li>Multiply or divide it as you need. usage: <code>gutter()*5</code> </li>
 			</ol>
 		</div>

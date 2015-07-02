@@ -16,6 +16,12 @@ Install via bower
 
 ### Change Lists
 
+2/7/15
+
+- Now below() and above() will in px instead of em, to ensure accurate scaling
+- Added map-extend, now sub-array can merge nicely without copy the whole thing.
+- efr 
+
 20/6/15
 
 - Simplify bower workflow

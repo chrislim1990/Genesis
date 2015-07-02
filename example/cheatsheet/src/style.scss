@@ -9,9 +9,13 @@ conf
 
 $susy: ( gutters: 1/2, );
 
-@import 
-"../../../src/conf",
-"../../../src/common";
+$typography:(
+	sizes:(
+		h2: 2,
+		),
+	);
+
+@import "../../../src/common";
 
 /*--------------------------------------------------------------
 susy
@@ -19,7 +23,7 @@ susy
 
 #main{
 	@include container;
-	
+
 	.doc-header{ @include span(12); }
 	
 	.half{ 
