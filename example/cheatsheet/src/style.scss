@@ -27,7 +27,7 @@ susy
 	.doc-header{ @include span(12); }
 	
 	.half{ 
-		@include span(6);
+		@extend %half;
 		position:relative;
 	}
 	
@@ -38,7 +38,7 @@ susy
 		.full{ @include span(6 of 6); }
 	}
 	
-	.fourth{ @include span(3); }
+	.fourth{ @extend %one-fourth; }
 }
 
 /*--------------------------------------------------------------
@@ -57,7 +57,7 @@ section{
 }
 
 .toc{
-	@extend %border;
+	@extend %border, %hide-md;
 	@include position(fixed,$t:1em,$r:1em);
 	font-size: 0.9em;
 	padding: 1em 1.5em;

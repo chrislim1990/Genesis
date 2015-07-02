@@ -90,7 +90,31 @@
 
 		<div class="half">
 			<h4>Border Placeholder</h4>
-<p>Ranging from <code>%border</code> until <code>%border-bottom</code>, it will add 1px solid border color border in the direction you specify.</p>
+			<p>Ranging from <code>%border</code> until <code>%border-bottom</code>, it will add 1px solid border color border in the direction you specify.</p>
+		</div>
+
+		<div class="half">
+			<h4>Sizes Placeholder</h4>
+			<p>Here are list of sizes placeholders:</p>
+			<ul>
+				<li>one-third: 33.33%</li>
+				<li>two-third: 66.66%</li>
+				<li>one-fourth: 25%</li>
+				<li>half: 50%</li>
+				<li>three-fourth: 75%</li>
+				<li>full: 100%</li>
+			</ul>
+		</div>
+
+		<div class="half">
+			<h4>Hide</h4>
+			<p>All screen sizes define in conf will have its own placeholder. eg: %hide-xs</p>
+			<ul>
+				<li>%hide-xs</li>
+				<li>%hide-sm</li>
+				<li>%hide-md</li>
+				<li>%hide-lg</li>
+			</ul>
 		</div>
 
 	</div>
