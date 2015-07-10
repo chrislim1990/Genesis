@@ -79,3 +79,37 @@ border with default border color
 %border-left 	{ @include border(left) };
 %border-bottom 	{ @include border(bottom) };
 %border-right 	{ @include border(right) };
+
+/*--------------------------------------------------------------
+grids
+--------------------------------------------------------------*/
+
+%span{ @include span(1); }
+
+$grid-placeholders: (
+	one-third: 33.33,
+	two-third: 66.66,
+	one-fourth: 25,
+	half: 50,
+	three-fourth: 75,
+	full: 100
+	);
+
+@each $type, $width in $grid-placeholders{
+
+	%#{$type}{
+		@extend %span;
+		width: $width+0%;
+	}
+
+}
+
+/*--------------------------------------------------------------
+hide
+--------------------------------------------------------------*/
+
+@each $screen, $size in $screen-sizes{
+	%hide-#{$screen}{
+		@include below($screen){ display: none; }
+	}
+}

@@ -3,12 +3,12 @@ media queries
 --------------------------------------------------------------*/
 
 @mixin below($screen-size){
-	$screen-size : #{em(map-get($screen-sizes, $screen-size)-1)};
+	$screen-size : screen($screen-size)-1;
 	@media (max-width: $screen-size) { @content; }
 }
 
 @mixin above($screen-size){
-	$screen-size : #{em(map-get($screen-sizes, $screen-size))};
+	$screen-size : screen($screen-size);
 	@media (min-width: $screen-size) { @content; }
 }
 

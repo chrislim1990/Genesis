@@ -1,8 +1,6 @@
 /*--------------------------------------------------------------
 global
 --------------------------------------------------------------*/
-
-$base-font-size: 15px!default;
 $global-radius : 0.3em!default;
 
 /*--------------------------------------------------------------
@@ -27,20 +25,26 @@ $g-colors-defaults: (
 $colors: map-merge($g-colors-defaults,$colors);
 
 /*--------------------------------------------------------------
-susy
+screen and font sizes
 --------------------------------------------------------------*/
+$screen-sizes: ()!default;
 
-$screen-sizes: (
-	xs : 600px,
-	sm : 768px,
-	md : 992px,
-	lg : 1200px
+$g-sizes:(
+	lg:( 1200px, 15px ),
+	md:( 992px, 14px ),
+	sm:( 768px, 13px ),
+	xs:( 600px, 12px ),
 	);
 
+$screen-sizes: map-merge($g-sizes,$screen-sizes);
+
+/*--------------------------------------------------------------
+susy
+--------------------------------------------------------------*/
 $susy: ()!default;
 
 $g-susy-defaults: (
-	container: em(map-get($screen-sizes, md)),
+	container: screen(md),
 	columns: 12,
 	gutters: 1/2,
 	gutter-position: inside,
@@ -52,7 +56,6 @@ $susy: map-merge($g-susy-defaults,$susy);
 /*--------------------------------------------------------------
 typography
 --------------------------------------------------------------*/
-
 $typography:()!default;
 
 $g-typography-defaults: (
@@ -75,7 +78,7 @@ $g-typography-defaults: (
 		),
 
 	list: (
-		margin: 1.2em,
+		margin: 1.5em,
 		item: ( margin-top: 0.5em, )
 		),
 
@@ -88,7 +91,7 @@ $g-typography-defaults: (
 		)
 	);
 
-$typography: map-merge($g-typography-defaults,$typography);
+$typography: map-extend($g-typography-defaults,$typography, true);
 
 /*--------------------------------------------------------------
 theme
@@ -138,4 +141,4 @@ $g-buttons-defaults: (
 		),
 	);
 
-$buttons: map-merge($g-buttons-defaults,$buttons);
+$buttons: map-extend($g-buttons-defaults,$buttons, true);
