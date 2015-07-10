@@ -10,7 +10,6 @@ body{
 		}
 	}
 
-	font-size: map-get($typography, font-size);
 	font-family: map-get($typography, font);
 	font-weight: map-get($typography, font-weight);
 	line-height: map-get($typography, line-height);
