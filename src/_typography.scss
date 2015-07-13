@@ -3,10 +3,18 @@ base
 --------------------------------------------------------------*/
 body{
 
+	$t : 0;
+
 	@each $type, $size in $screen-sizes{
+		$t: $t+1;
 		$font-size: nth($size, 2);
-		@include below($type){
+		@if ($t == 1) {
 			font-size: $font-size;
+		}
+		@else {
+			@include below($type){
+				font-size: $font-size;
+			}
 		}
 	}
 
