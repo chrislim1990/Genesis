@@ -8,11 +8,15 @@
 		<div class="half">
 			<h4>Margin & Padding Mixin</h4>
 			<p>
-				Enable 1 line code for different direction margin & padding. <code>@include margin($t:1em,$r:1em,$b:1em,$l:1em)</code> <code>@include padding($t:1em,$r:1em,$b:1em,$l:1em)</code>
+				Enable 1 line code for different direction margin & padding.
 				<br>
-				The direction is optional, just put those you need. example: <code>margin($t:1em,$b:3em)</code>
+				<code>@include margin($t,$r,$b,$l)</code>
 			</p>
-
+			<ol>
+				<li>The direction is optional, just put those you need. example: <code>margin($t:1em,$b:3em)</code></li>
+				<li>Use <code>@include margin-v</code> for vertical margin (top and bottom). Others options are <code>margin-h</code>, <code>padding-v</code>, <code>padding-h</code>.</li>
+			</ol>
+			
 			<a class="btn alt margin_1">Top 1em, Btm 3em</a>
 			<a class="btn alt margin_2">Margin: Top 3em, Btm 1em, Left 2em; Padding: Btm 10em</a>
 			<a class="btn alt margin_3">Top 3em, Right 3em</a>

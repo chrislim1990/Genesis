@@ -25,7 +25,7 @@ size: shorthand for height and width
 margin & padding
 --------------------------------------------------------------*/
 
-@mixin make-margin($type, $t, $r, $b, $l ){
+@mixin make-margin($type, $t: null, $r: null, $b: null, $l: null ){
 	#{$type}-top: $t;
 	#{$type}-right: $r;
 	#{$type}-left: $l;
@@ -38,6 +38,22 @@ margin & padding
 
 @mixin padding ($t: null, $r: null, $l: null, $b: null ) {
 	@include make-margin(padding, $t, $r, $b, $l);
+}
+
+@mixin margin-v ($v){
+	@include make-margin(margin, $t:$v, $b:$v);
+}
+
+@mixin margin-h ($v){
+	@include make-margin(margin, $l:$v, $r:$v);
+}
+
+@mixin padding-v ($v){
+	@include make-margin(padding, $t:$v, $b:$v);
+}
+
+@mixin padding-h ($v){
+	@include make-margin(padding, $l:$v, $r:$v);
 }
 
 /*--------------------------------------------------------------
